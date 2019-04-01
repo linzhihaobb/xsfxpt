@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>相册</title>
+  <link rel="stylesheet" href="./static/css/base.css">
+  <link rel="stylesheet" href="./static/css/bootstrap.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/teacherSpace.css">
+  <script src="./static/js/vue.js"></script>
+  <script src="./temScript/courseLink.js"></script>
+  <script src="./temScript/header.js"></script>
+  <script src="./temScript/footer.js"></script>
+</head>
+<body>
+  
+<div id="app">
+    <header-space></header-space>
+
+<div class="albumBox">
+  <div class="messageTitle">相册</div>
+  <div class="uploadPhoto">
+    <span><img src="./static/image/64563.svg" alt="">上传照片/视频</span>
+    <span>创建相册</span>
+    <span>展示设计</span>
+  </div>
+  <ul class="photoBigBox">
+    <li class="photoBox">
+      <a href="albumDetail.html" title="点击进入">
+      <div class="photoImgBox">
+          <img src="./static/image/Group 3.jpg" alt="">
+          <div class="photoBg"></div>
+          <div class="photoNumber">36</div>
+      </div>
+
+      <div class="albumName">贴图相册<img src="./static/image/Shape.svg" alt=""></div>
+    </a> 
+    </li>
+    <li class="photoBox">
+        <div class="photoImgBox">
+            <img src="./static/image/Group 3.jpg" alt="">
+            <div class="photoBg"></div>
+            <div class="photoNumber">36</div>
+        </div>
+  
+        <div class="albumName">贴图相册<img src="./static/image/Shape.svg" alt=""></div>
+         
+      </li>
+      <li class="photoBox">
+          <div class="photoImgBox">
+              <img src="./static/image/Group 3.jpg" alt="">
+              <div class="photoBg"></div>
+              <div class="photoNumber">36</div>
+          </div>
+    
+          <div class="albumName">贴图相册<img src="./static/image/Shape.svg" alt=""></div>
+           
+        </li>
+        <li class="photoBox">
+            <div class="photoImgBox">
+                <img src="./static/image/Group 3.jpg" alt="">
+                <div class="photoBg"></div>
+                <div class="photoNumber">36</div>
+            </div>
+      
+            <div class="albumName">贴图相册<img src="./static/image/Shape.svg" alt=""></div>
+             
+          </li>
+          <li class="photoBox">
+              <div class="photoImgBox">
+                  <img src="./static/image/Group 3.jpg" alt="">
+                  <div class="photoBg"></div>
+                  <div class="photoNumber">36</div>
+              </div>
+        
+              <div class="albumName">贴图相册<img src="./static/image/Shape.svg" alt=""></div>
+               
+            </li>
+            <li class="photoBox">
+                <div class="photoImgBox">
+                    <img src="./static/image/Group 3.jpg" alt="">
+                    <div class="photoBg"></div>
+                    <div class="photoNumber">36</div>
+                </div>
+          
+                <div class="albumName">贴图相册<img src="./static/image/Shape.svg" alt=""></div>
+                 
+              </li>
+              <li class="photoBox">
+                  <div class="photoImgBox">
+                      <img src="./static/image/Group 3.jpg" alt="">
+                      <div class="photoBg"></div>
+                      <div class="photoNumber">36</div>
+                  </div>
+            
+                  <div class="albumName">贴图相册<img src="./static/image/Shape.svg" alt=""></div>
+                   
+                </li>
+    <div class="clr"></div>
+  </ul>
+</div>
+
+    <footer-link></footer-link>
+</div>
+
+<script src="./static/js/jquery.min.js"></script>
+<script src="./static/js/bootstrap.js"></script>
+<script>
+  new Vue({
+    el: "#app"
+  })
+
+  $(function () {
+    var l = $(".pingLunZhuanFaContent").length
+    $(".pingLunZhuanFaContent").eq(l - 1).css("border-bottom", "none")
+
+  })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>留言板</title>
+  <link rel="stylesheet" href="./static/css/base.css">
+  <link rel="stylesheet" href="./static/css/bootstrap.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/teacherSpace.css">
+  <script src="./static/js/vue.js"></script>
+  <script src="./temScript/courseLink.js"></script>
+  <script src="./temScript/header.js"></script>
+  <script src="./temScript/footer.js"></script>
+</head>
+
+<body>
+
+  <div id="app">
+      <header-space></header-space>
+
+    <div class="messageBox">
+      <div class="messageTitle">留言板</div>
+      <div class="messageContent">
+        <div class="messageTop">
+          <span>主人寄语</span>
+          <span>编辑您的寄语</span>
+        </div>
+        <div class="messageBottom">看到了别人的成长，自己却停留在原地止步不前。</div>
+      </div>
+      <div class="boardBox">
+        <div class="boardTop">
+          <span>留言</span>
+          <span>留言板设置<img src="./static/image/499.svg" alt=""></span>
+          <span class="boardPage"><span>上一页</span><span>下一页</span></span>
+        </div>
+        <div class="boardPingLunBox">
+          <div class="pingLunBox">
+            <div class="pingLunImg"><img src="./static/image/Group 3.jpg" alt=""></div>
+            <div class="pingLunContent">
+              <div><span class="pingLunName">候龙生</span> <span class="lou">第58楼</span></div>
+              <div class="pingLunText">
+                侯艳丽，女，1967年4月出生，汉族，中共党员。现任清华大学附属小学党总支书记。全国著名特级教师，教授，博士生导师。女，1967年4月出生，汉族，中共党员。
+              </div>
+              <div class="pingLunBottom">
+                <span class="pingLunZhang"><img src="./static/image/Shape-22.svg" alt="">5</span>
+                <span class="pingLunShuXian">|</span>
+                <span class="pingLunSize">评论</span>
+                <span class="pingLunTime">2018-12-12</span>
+              </div>
+            </div>
+            <div class="clr"></div>
+          </div>
+          <div class="pingLunBox">
+            <div class="pingLunImg"><img src="./static/image/Group 3.jpg" alt=""></div>
+            <div class="pingLunContent">
+              <div><span class="pingLunName">候龙生</span> <span class="lou">第58楼</span></div>
+              <div class="pingLunText">
+                侯艳丽，女，1967年4月出生，汉族，中共党员。现任清华大学附属小学党总支书记。全国著名特级教师，教授，博士生导师。女，1967年4月出生，汉族，中共党员。
+              </div>
+              <div class="pingLunBottom">
+                <span class="pingLunZhang"><img src="./static/image/Shape-22.svg" alt="">5</span>
+                <span class="pingLunShuXian">|</span>
+                <span class="pingLunSize">评论</span>
+                <span class="pingLunTime">2018-12-12</span>
+              </div>
+              <div class="pingLunZhuanFa">
+                <div class="pingLunZhuanFaBox">
+                  <div class="pingLunZhuanFaImg"><img src="./static/image/Group 3.jpg" alt=""></div>
+                  <div class="pingLunZhuanFaContent">
+                    <div class="pingLunZhuanFaNameBox"><span class="pingLunZhuanFaName">陈娜娜</span><span class="pingLunZhuanFaTime">2018-12-12</span></div>
+                    <div class="pingLunZhuanFaText">侯艳丽，女，1967年4月出生，汉族，中共党员。现年4月出生，汉族，中共党员。现年4月出生，汉族，中共党员。现任清华大学附属小学党总支书记。</div>
+                  </div>
+                  <div class="clr"></div>
+                </div>
+                <div class="pingLunZhuanFaBox">
+                  <div class="pingLunZhuanFaImg"><img src="./static/image/Group 3.jpg" alt=""></div>
+                  <div class="pingLunZhuanFaContent">
+                    <div class="pingLunZhuanFaNameBox"><span class="pingLunZhuanFaName">陈娜娜</span><span class="pingLunZhuanFaTime">2018-12-12</span></div>
+                    <div class="pingLunZhuanFaText">侯艳丽，女，1967年4月出生，汉族，中共党员。现任清华大学附属小学党总支书记。</div>
+                  </div>
+
+                </div>
+                <div class="clr"></div>
+              </div>
+            </div>
+            <div class="clr"></div>
+          </div>
+        </div>
+      </div>
+      <div class="boardCommentBox">
+        <div class="boardCommentTop">
+          <div class="boardCommentTopLeft">
+            <div class="boardCommentTopLeftImg"><img src="./static/image/Group 3.jpg" alt=""></div>
+            <div class="boardCommentTopLeftName">陈娜娜</div>
+          </div>
+          <div class="boardCommentTopRight">
+            <div class="biaoqian"><img src="./static/image/49.svg" alt=""></div>
+            <form action="">
+              <textarea name="" id="" cols="30" rows="10" placeholder="说点什么吧..."></textarea>
+              <button>发表留言</button>
+            </form>
+          </div>
+          <div class="clr"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer-link></footer-link>
+
+  </div>
+
+  <script src="./static/js/jquery.min.js"></script>
+  <script src="./static/js/bootstrap.js"></script>
+  <script>
+    new Vue({
+      el: "#app"
+    })
+
+    $(function () {
+      var l = $(".pingLunZhuanFaContent").length
+      $(".pingLunZhuanFaContent").eq(l - 1).css("border-bottom", "none")
+
+      var l = $(".pingLunContent").length
+      $(".pingLunContent").eq(l - 1).css("border-bottom", "none")
+
+    })
+  </script>
+
+</body>
+
+</html>

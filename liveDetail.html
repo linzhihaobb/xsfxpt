@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>直播详情</title>
+  <link rel="stylesheet" href="./static/css/base.css">
+  <link rel="stylesheet" href="./static/css/swiper.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/live.css">
+  <link rel="stylesheet" href="./static/css/bootstrap.css">
+  <script src="./static/js/vue.js"></script>
+  <script src="./temScript/header.js"></script>
+  <script src="./temScript/courseLink.js"></script>
+  <script src="./temScript/footer.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 头部 -->
+   <header-course></header-course>
+   <!-- 教师介绍 -->
+    <div id="teacher-introduce">
+      <div class="teacher-introduce-left">
+        <div class="teacher-img"><img src="./static/image/9.svg" alt=""></div>
+        <div class="teacher-js">
+          <div class="teacher-js-name">侯艳丽老师</div>
+          <div class="teacher-js-content">侯艳丽，女，1967年4月出生，汉族，中共党员。现任清华大学附属小学党总支书记、校长。全国著名特级教师，教授，博士生导师</div>
+          <div class="teacher-js-title">
+            <ul>
+              <li>特级教师</li>
+              <li>特级教师</li>
+              <li>特级教师</li>
+              <li>特级教师</li>
+              <li>特级教师</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="teacher-introduce-right">
+        <img src="./static/image/Group 3.jpg" alt="">
+      </div>
+    </div>
+<!-- 视频 + 提问区-->
+    <div id="video">
+      <div class="video-left">
+        <video src="./static/video/罗志祥 - No Joke.mp4" autoplay controls></video>
+      </div>
+      <div class="video-right">
+        <div class="video-right-top">提问区</div>
+        <div class="video-right-center">
+          <ul>
+            <li>          
+                <div class="video-right-center-img">
+                  <img src="./static/image/9.svg" alt="">
+                </div>         
+                <div class="video-right-center-content">
+                  <div class="video-right-center-content-name">候龙生</div>
+                  <div class="video-right-center-content-js">侯艳丽，女，1967年4月出生，汉族，中共党员。现任清华大学附属小学党总支书记。</div>
+                  <div class="video-right-center-content-dz"><span class="glyphicon glyphicon-thumbs-up"></span>0<span
+                      class="date">2018-12-12</span></div>
+                </div>
+  <div class="clr"></div>
+            </li>
+
+            <li>          
+                <div class="video-right-center-img">
+                  <img src="./static/image/9.svg" alt="">
+                </div>         
+                <div class="video-right-center-content">
+                  <div class="video-right-center-content-name">候龙生</div>
+                  <div class="video-right-center-content-js">侯艳丽，女，1967年4月出生，汉族，中共党员。现任清华大学附属小学党总支书记。</div>
+                  <div class="video-right-center-content-dz"><span class="glyphicon glyphicon-thumbs-up"></span>0<span
+                      class="date">2018-12-12</span></div>
+                </div>
+  <div class="clr"></div>
+            </li>
+            <li>          
+                <div class="video-right-center-img">
+                  <img src="./static/image/9.svg" alt="">
+                </div>         
+                <div class="video-right-center-content">
+                  <div class="video-right-center-content-name">候龙生</div>
+                  <div class="video-right-center-content-js">侯艳丽，女，1967年4月出生，汉族，中共党员。现任清华大学附属小学党总支书记。</div>
+                  <div class="video-right-center-content-dz"><span class="glyphicon glyphicon-thumbs-up"></span>0<span
+                      class="date">2018-12-12</span></div>
+                </div>
+  <div class="clr"></div>
+            </li>
+            <li>          
+                <div class="video-right-center-img">
+                  <img src="./static/image/9.svg" alt="">
+                </div>         
+                <div class="video-right-center-content">
+                  <div class="video-right-center-content-name">候龙生</div>
+                  <div class="video-right-center-content-js">侯艳丽，女，1967年4月出生，汉族，中共党员。现任清华大学附属小学党总支书记。</div>
+                  <div class="video-right-center-content-dz"><span class="glyphicon glyphicon-thumbs-up"></span>0<span
+                      class="date">2018-12-12</span></div>
+                </div>
+  <div class="clr"></div>
+            </li>
+          </ul>
+        </div>
+        <div class="video-right-bottom">
+          <form action="">
+            <input type="text" placeholder="请输入">
+            <button>提问</button>
+          </form>
+        </div>
+      </div>
+    </div>
+<!-- 历史直播推荐 -->
+    <div id="histroy-video">
+      <div class="histroy-video-top">
+        <div class="font35">历史直播</div>
+        <div class="dibu"></div>
+        <div class="back-course">返回直播课程列表<img src="./static/image/hh.svg" alt=""></div>
+      </div>
+      <div id="histroy-video-content">
+      <ul class="swiper-wrapper">
+          <course-link></course-link>
+          <course-link></course-link>
+          <course-link></course-link>
+          <course-link></course-link>
+          <course-link></course-link>
+          <course-link></course-link>
+          <course-link></course-link>
+          <course-link></course-link>
+          <course-link></course-link>
+          <course-link></course-link>
+      </ul>
+      </div>
+      <div class="next-two"><img src="./static/image/300.svg" alt=""></div>
+      <div class="prev-two"><img src="./static/image/30.svg" alt=""></div>
+    </div>
+<!-- 底部 -->
+ <footer-link></footer-link>
+
+  </div>
+
+  <script src="./static/js/jquery.min.js"></script>
+  <script src="./static/js/bootstrap.js"></script>
+  <script src="./temScript/header.js"></script>
+  <script src="./static/js/swiper.min.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+    })
+
+    var swiper1 = new Swiper("#histroy-video-content", {
+      slidesPerView: 4,
+      spaceBetween: "1.5%",
+      slidesPerGroup: 1,
+      loop: true,
+      loopFillGroupWithBlank: true,
+      navigation: {
+        nextEl: '.next-two',
+        prevEl: '.prev-two',
+      },
+    });
+  </script>
+  <script src="./static/js/index.js"></script>
+</body>
+
+</html>

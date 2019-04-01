@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160px" height="160px" viewBox="0 0 160 160" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>30</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="34" cy="34" r="34"></circle>
+        <filter x="-115.4%" y="-96.3%" width="330.9%" height="330.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="13" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="24" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.25 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页" transform="translate(-1725.000000, -1694.000000)">
+            <g id="Group-30" transform="translate(1771.000000, 1727.000000)">
+                <g id="30">
+                    <g id="Oval-Copy-18" fill-rule="nonzero">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#3DBDB6" xlink:href="#path-1"></use>
+                    </g>
+                    <path d="M35.9958502,42.9999939 C35.1040414,43.0017286 34.2479803,42.6359101 33.615451,41.9827838 L20.5648091,28.4199836 C19.8117303,27.637615 19.8117303,26.369145 20.5648091,25.5867764 C21.3178878,24.8044079 22.5388697,24.8044079 23.2919485,25.5867764 L35.9997028,38.7893505 L48.7080076,25.5873482 C49.1951641,25.0812445 49.9052102,24.8835885 50.5706784,25.0688353 C51.2361467,25.2540821 51.7559365,25.7940883 51.9342482,26.4854389 C52.1125598,27.1767894 51.9223035,27.9144517 51.435147,28.4205554 L38.3839547,41.9787813 C37.7494148,42.6341654 36.8906175,43.0014083 35.9958502,42.9999939 Z" id="Path-Copy-15" fill="#FFFFFF" transform="translate(36.000000, 34.000000) rotate(-90.000000) translate(-36.000000, -34.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

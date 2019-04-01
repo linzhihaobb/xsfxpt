@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>直播课程</title>
+  <link rel="stylesheet" href="./static/css/base.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/live.css">
+  <link rel="stylesheet" href="./static/css/bootstrap.css">
+  <script src="./static/js/vue.js"></script>
+  <script src="./temScript/courseLink.js"></script>
+  <script src="./temScript/header.js"></script>
+  <script src="./temScript/footer.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 头部 -->
+    <header-course></header-course>
+    <!-- 内容 -->
+    <div id="course-link">
+      <ul>
+        <course-link></course-link>
+        <course-link></course-link>
+        <course-link></course-link>
+        <course-link></course-link>
+        <course-link></course-link>
+        <course-link></course-link>
+        <course-link></course-link>
+        <course-link></course-link>
+        <course-link></course-link>
+        <course-link></course-link>
+        <course-link></course-link>
+        <course-link></course-link>
+        <course-link></course-link>
+        <course-link></course-link>
+        <course-link></course-link>
+        <course-link></course-link>
+        <course-link></course-link>
+        <course-link></course-link>
+        <course-link></course-link>
+        <course-link></course-link>
+      </ul>
+    </div>
+    <div class="clr"></div>
+    <!-- 分页 -->
+    <div class="course-page">
+      <div class="course-page-choose">
+        <div class="course-page-choose-first"><a href="">首页</a></div>
+        <div class="course-page-choose-number">
+          <ul>
+            <li class="font25 leftHover"><a href=""><img src="./static/image/48.svg" alt=""></a></li>
+            <li><a href="">01</a></li>
+            <li><a href="">02</a></li>
+            <li><a href="">03</a></li>
+            <li><a href="">04</a></li>
+            <li><a href="">05</a></li>
+            <li><a href="">06</a></li>
+            <li><a href="">07</a></li>
+            <li class="font25 rightHover"><a href=""><img src="./static/image/480.svg" alt="" class=""></a></li>
+          </ul>
+        </div>
+        <div class="course-page-choose-last"><a href="">尾页</a></div>
+        <div class="clr"></div>
+      </div>
+      <div class="course-page-jump">
+        <span>跳转到</span>
+        <span class="course-page-jump-input">
+          <form action="">
+            <input type="text">
+            <button>GO</button>
+          </form>
+        </span>
+        <span>共155页</span>
+      </div>
+    </div>
+    <footer-link></footer-link>
+  </div>
+
+
+  <script src="./static/js/jquery.min.js"></script>
+  <script src="./static/js/bootstrap.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data() {
+        return {
+
+        }
+      }
+    })
+  </script>
+    <script src="./static/js/micro.js"></script>
+</body>
+
+</html>

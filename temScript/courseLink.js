@@ -1,0 +1,31 @@
+Vue.component("course-link", {
+  template: [
+    '<li class="course-link-li swiper-slide">',
+    '<div class="course-link-top">',
+    '<img src="./static/image/photo copy 3.png" alt="">',
+    '<div class="course-link-fire">',
+    '<div><img src="./static/image/47.svg" alt=""></div>',
+    '<div>533</div>',
+    '</div>',
+    '<div class="course-link-radius"><img src="./static/image/46.svg" alt=""></div>',
+    '</div>',
+    '<div class="course-link-title">初一英语基础知识大课堂</div>',
+    '<div class="course-link-teacher">',
+    '<span><strong>主讲：</strong>候艳丽老师</span>',
+    '<span><strong>科目：</strong>英语</span>',
+    '</div>',
+    '<div class="course-link-teacher-title">',
+    '<ul>',
+    '<li>特级教师</li>',
+    '<li>特级教师</li>',
+    '<li>特级教师</li>',
+    '<li>特级教师</li>',
+    '<li>特级教师</li>',
+    '<li>特级教师</li>',
+    '</ul>',
+    '</div>',
+    '<div class="clr"></div>',
+    '<div class="course-link-go"><a href="liveDetail.html">马上学习</a></div>',
+    '</li>'
+  ].join("")
+})

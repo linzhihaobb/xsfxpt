@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>课件分享</title>
+  <link rel="stylesheet" href="./static/css/base.css">
+  <link rel="stylesheet" href="./static/css/swiper.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/live.css">
+  <link rel="stylesheet" href="./static/css/bootstrap.css">
+  <link rel="stylesheet" href="./static/css/coursewareSharing.css">
+  <script src="./static/js/vue.js"></script>
+  <script src="./temScript/header.js"></script>
+  <script src="./temScript/courseLink.js"></script>
+  <script src="./temScript/footer.js"></script>
+</head>
+
+<body>
+
+  <div id="app">
+    <!-- 头部 -->
+    <header-micro></header-micro>
+    <!-- 内容部分 -->
+    <div id="kejianfenxiang">
+      <div class="nszwz">
+        <span>您所在位置：</span><span>首页</span>&nbsp;<span>></span>&nbsp;<span>高中</span>&nbsp;<span>></span>&nbsp;<span>...</span>
+      </div>
+      <div class="nszwz-center">
+        <div class="nszwz-center-left">
+          <div class="divBottom">
+            <span class="jiachu">类别：</span>
+            <span class="clickSpan chooseSpan">全部</span>
+            <span class="clickSpan">试题</span>
+            <span class="clickSpan">教案</span>
+            <span class="clickSpan">课件</span>
+            <span class="clickSpan">学案</span>
+            <span class="clickSpan">素材</span>
+            <span class="clickSpan">论文</span>
+            <span class="clickSpan">教学案</span>
+          </div>
+          <div class="divBottom">
+            <span class="jiachu">属性：</span>
+            <div class="clickRadio clickRadioBg"><span class="glyphicon-th-list glyphicon glyphicon-ok"></span></div>
+            <span class="radioFont">打包资源</span>
+            <div class="clickRadio"><span class="glyphicon-th-list glyphicon glyphicon-ok"></span></div>
+            <span class="radioFont">精品资源</span>
+            <div class="clickRadio"><span class="glyphicon-th-list glyphicon glyphicon-ok"></span></div>
+            <span class="radioFont">免费资源</span>
+            <div class="clickRadio"><span class="glyphicon-th-list glyphicon glyphicon-ok"></span></div>
+            <span class="radioFont">最新资源</span>
+          </div>
+          <div class="divBottom">
+            <span class="jiachu">年份：</span>
+            <span class="clickSpan  chooseSpan"><a href="#">全部</a></span>
+            <span class="clickSpan">2019</span>
+            <span class="clickSpan">2018</span>
+            <span class="clickSpan">2017</span>
+            <span class="clickSpan">2016</span>
+            <span class="clickSpan">2015</span>
+            <span class="clickSpan">2014</span>
+            <span class="clickSpan">2013</span>
+          </div>
+          <div>
+            <span class="jiachu">区域：</span>
+            <span class="clickSpan  chooseSpan">全部</span>
+            <span class="clickSpan" v-for="item in areaList"><a href="">{{item.name}}</a></span>
+          </div>
+        </div>
+        <div class="nszwz-center-right">
+          <div class="nianjiBottom">
+            <span class="nianjichoose nianjiActive">小学</span>
+            <span class="spanPadding">|</span>
+            <span class="nianjichoose">初中</span>
+            <span class="spanPadding">|</span>
+            <span class="nianjichoose">高中</span>
+          </div>
+          <div class="jiaocaiBottom">
+            <span class="jiachu">教材版本：</span>
+            <span class="clickSpan  chooseSpan">新人教版</span>
+            <span class="clickSpan">北师大版</span>
+            <span class="clickSpan">苏教版</span>
+            <span class="clickSpan">粤教版</span>
+            <span class="clickSpan">语文版</span>
+            <span class="clickSpan">鲁人版</span>
+            <span class="clickSpan">沪教版</span>
+          </div>
+          <div class="jiaocaiBottom">
+            <span class="jiachu">教材版别：</span>
+            <span class="clickSpan  chooseSpan">期中</span>
+            <span class="clickSpan">期末</span>
+            <span class="clickSpan">月考</span>
+            <span class="clickSpan">复习</span>
+            <span class="clickSpan">练习</span>
+            <span class="clickSpan">单元测试</span>
+            <span class="clickSpan">竞赛</span>
+            <span class="clickSpan">综合测试</span>
+            <span class="clickSpan">知识点分析</span>
+          </div>
+          <div class="jiaocaiBottom">
+            <span class="jiachu">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;元：</span>
+            <span class="clickSpan  chooseSpan">一轮复习</span>
+            <span class="clickSpan">二轮复习</span>
+            <span class="clickSpan">三轮冲刺</span>
+            <span class="clickSpan">高考模拟</span>
+            <span class="clickSpan">高考猜题</span>
+            <span class="clickSpan">历年真题</span>
+          </div>
+          <div>
+            <span class="jiachu" style="float:left;line-height: 5.556vh">结果搜索：</span>
+            <form action="">
+              <input type="text" placeholder="请输入搜索内容" class="seachInput">
+              <button class="seachButton">搜索</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="clr"></div>
+      <div class="nszwz-bottom">
+        <div class="kejianBox">
+          <div class="kejianImg"><img src="./static/image/Group 3.jpg" alt=""></div>
+          <div class="kejianRight">
+            <div class="kejianTitle">安徽省安庆市五校联盟2016-2017学年高二地理上</div>
+            <div class="jejianIntroduce1">
+              <span class="strongSpan">类别：</span>
+              <span>高二</span>
+              <span>&nbsp;>&nbsp;</span>
+              <span>地理</span>
+              <span>&nbsp;>&nbsp;</span>
+              <span>不分版本</span>
+              <span>&nbsp;>&nbsp;</span>
+              <span>不分版别</span>
+              <span>&nbsp;>&nbsp;</span>
+              <span>安徽</span>
+              <span>&nbsp;>&nbsp;</span>
+              <span>试题</span>
+            </div>
+            <div>
+              <div class="jejianIntroduce">
+                <div> <span class="strongSpan">时间：</span><span class="spanSpace">2018-11-19</span></div>
+                <div><span class="strongSpan">查看人数：</span><span class="spanSpace">1988人</span></div>
+              </div>
+              <div class="jejianIntroduce">
+                <div> <span class="strongSpan"> 区域：</span><span class="spanSpace">安徽省</span></div>
+                <div> <span class="strongSpan">下载人数：</span><span>560人</span></div>
+              </div>
+              <div class="jejianIntroduce">
+                <span class="strongSpan">大小：</span><span class="spanSpace">484KB</span>
+              </div>
+              <div class="jejianIntroduce">
+                <span class="strongSpan">E币：</span><span>免费</span>
+              </div>
+            </div>
+            <div class="clickDownload">点击下载</div>
+            <div class="clickCollection"><a href="shareDetaile.html">查看</a></div>
+          </div>
+        </div>
+        <div class="kejianBox">
+          <div class="kejianImg"><img src="./static/image/Group 3.jpg" alt=""></div>
+          <div class="kejianRight">
+            <div class="kejianTitle">安徽省安庆市五校联盟2016-2017学年高二地理上学期期中联考试题年高二地理上学期期中联</div>
+            <div class="jejianIntroduce1">
+              <span class="strongSpan">类别：</span>
+              <span>高二</span>
+              <span>&nbsp;>&nbsp;</span>
+              <span>地理</span>
+              <span>&nbsp;>&nbsp;</span>
+              <span>不分版本</span>
+              <span>&nbsp;>&nbsp;</span>
+              <span>不分版别</span>
+              <span>&nbsp;>&nbsp;</span>
+              <span>安徽</span>
+              <span>&nbsp;>&nbsp;</span>
+              <span>试题</span>
+            </div>
+            <div>
+              <div class="jejianIntroduce">
+                <div> <span class="strongSpan">时间：</span><span class="spanSpace">2018-11-19</span></div>
+                <div><span class="strongSpan">查看人数：</span><span class="spanSpace">1988人</span></div>
+              </div>
+              <div class="jejianIntroduce">
+                <div> <span class="strongSpan"> 区域：</span><span class="spanSpace">安徽省</span></div>
+                <div> <span class="strongSpan">下载人数：</span><span>560人</span></div>
+              </div>
+              <div class="jejianIntroduce">
+                <span class="strongSpan">大小：</span><span class="spanSpace">484KB</span>
+              </div>
+              <div class="jejianIntroduce">
+                <span class="strongSpan">E币：</span><span>免费</span>
+              </div>
+            </div>
+            <div class="clickDownload">点击下载</div>
+            <div class="clickCollection">收藏</div>
+          </div>
+        </div>
+        <div class="kejianBox">
+          <div class="kejianImg"><img src="./static/image/Group 3.jpg" alt=""></div>
+          <div class="kejianRight">
+            <div class="kejianTitle">安徽省安庆市五校联盟2016-2017学年高二地理上学期期中联考试题年高二地理上学期期中联</div>
+            <div class="jejianIntroduce1">
+              <span class="strongSpan">类别：</span>
+              <span>高二</span>
+              <span>&nbsp;>&nbsp;</span>
+              <span>地理</span>
+              <span>&nbsp;>&nbsp;</span>
+              <span>不分版本</span>
+              <span>&nbsp;>&nbsp;</span>
+              <span>不分版别</span>
+              <span>&nbsp;>&nbsp;</span>
+              <span>安徽</span>
+              <span>&nbsp;>&nbsp;</span>
+              <span>试题</span>
+            </div>
+            <div>
+              <div class="jejianIntroduce">
+                <div> <span class="strongSpan">时间：</span><span class="spanSpace">2018-11-19</span></div>
+                <div><span class="strongSpan">查看人数：</span><span class="spanSpace">1988人</span></div>
+              </div>
+              <div class="jejianIntroduce">
+                <div> <span class="strongSpan"> 区域：</span><span class="spanSpace">安徽省</span></div>
+                <div> <span class="strongSpan">下载人数：</span><span>560人</span></div>
+              </div>
+              <div class="jejianIntroduce">
+                <span class="strongSpan">大小：</span><span class="spanSpace">484KB</span>
+              </div>
+              <div class="jejianIntroduce">
+                <span class="strongSpan">E币：</span><span>免费</span>
+              </div>
+            </div>
+            <div class="clickDownload">点击下载</div>
+            <div class="clickCollection">收藏</div>
+          </div>
+        </div>
+        <div class="kejianBox">
+          <div class="kejianImg"><img src="./static/image/Group 3.jpg" alt=""></div>
+          <div class="kejianRight">
+            <div class="kejianTitle">安徽省安庆市五校联盟2016-2017学年高二地理上学期期中联考试题年高二地理上学期期中联</div>
+            <div class="jejianIntroduce1">
+              <span class="strongSpan">类别：</span>
+              <span>高二</span>
+              <span>&nbsp;>&nbsp;</span>
+              <span>地理</span>
+              <span>&nbsp;>&nbsp;</span>
+              <span>不分版本</span>
+              <span>&nbsp;>&nbsp;</span>
+              <span>不分版别</span>
+              <span>&nbsp;>&nbsp;</span>
+              <span>安徽</span>
+              <span>&nbsp;>&nbsp;</span>
+              <span>试题</span>
+            </div>
+            <div>
+              <div class="jejianIntroduce">
+                <div> <span class="strongSpan">时间：</span><span class="spanSpace">2018-11-19</span></div>
+                <div><span class="strongSpan">查看人数：</span><span class="spanSpace">1988人</span></div>
+              </div>
+              <div class="jejianIntroduce">
+                <div> <span class="strongSpan"> 区域：</span><span class="spanSpace">安徽省</span></div>
+                <div> <span class="strongSpan">下载人数：</span><span>560人</span></div>
+              </div>
+              <div class="jejianIntroduce">
+                <span class="strongSpan">大小：</span><span class="spanSpace">484KB</span>
+              </div>
+              <div class="jejianIntroduce">
+                <span class="strongSpan">E币：</span><span>免费</span>
+              </div>
+            </div>
+            <div class="clickDownload">点击下载</div>
+            <div class="clickCollection">收藏</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- 分页 -->
+    <div class="course-page">
+      <div class="course-page-choose">
+        <div class="course-page-choose-first"><a href="">首页</a></div>
+        <div class="course-page-choose-number">
+          <ul>
+            <li class="font25 leftHover"><a href=""><img src="./static/image/48.svg" alt=""></a></li>
+            <li><a href="">01</a></li>
+            <li><a href="">02</a></li>
+            <li><a href="">03</a></li>
+            <li><a href="">04</a></li>
+            <li><a href="">05</a></li>
+            <li><a href="">06</a></li>
+            <li><a href="">07</a></li>
+            <li class="font25 rightHover"><a href=""><img src="./static/image/480.svg" alt="" class=""></a></li>
+          </ul>
+        </div>
+        <div class="course-page-choose-last"><a href="">尾页</a></div>
+        <div class="clr"></div>
+      </div>
+      <div class="course-page-jump">
+        <span>跳转到</span>
+        <span class="course-page-jump-input">
+          <form action="">
+            <input type="text">
+            <button>GO</button>
+          </form>
+        </span>
+        <span>共155页</span>
+      </div>
+    </div>
+    <!-- 底部 -->
+    <footer-link></footer-link>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <script src="./static/js/jquery.min.js"></script>
+  <script src="./static/js/bootstrap.js"></script>
+  <script src="./temScript/header.js"></script>
+  <script src="./static/js/swiper.min.js"></script>
+  <script src="./static/js/jquery-ui.min.js"></script>
+  <script>
+    $.ajax({
+      type: "post",
+      // url: "http://192.168.123.4:8080/kio/public/getSubjectList",
+      // url:" http://192.168.123.4:8080/kio/public/getVersionList?gradeId=76cc18981d124af9847d14b955494107",
+      url:" http://192.168.123.4:8080/kio/public/getGradeList",
+      // url: " http://192.168.123.4:8080/kio/public/getAreaList",
+
+      success: function (res) {
+        console.log(res)
+      }
+    });
+    new Vue({
+      el: "#app",
+      data() {
+        return {
+          gradeList: "",
+          areaList: "",
+          subjectId:''
+        }
+      },
+      methods: {
+        getData() {
+          function compareByOrderNumber(a, b) {
+            return a.orderNumber - b.orderNumber;
+          }
+          function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg); //search,查询？后面的参数，并匹配正则
+            if (r != null) return unescape(r[2]);
+            return null;
+          }
+          
+          var _this = this
+          _this.subjectId = GetQueryString("subjectId")
+          console.log(_this.subjectId)
+          $.post('http://192.168.123.4:8080/kio/public/getGradeList').then(
+            function (res) {
+              _this.gradeList = res.gradeList.sort(compareByOrderNumber)
+            })
+          $.post('http://192.168.123.4:8080/kio/public/getAreaList').then(
+            function (res) {
+              _this.areaList = res.areaList.sort(compareByOrderNumber)
+            })
+        }
+      },
+      created() {
+        this.getData();
+      },
+      mounted() {}
+    })
+  </script>
+  <script src="./static/js/micro.js"></script>
+</body>
+
+</html>

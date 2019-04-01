@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>文章列表-个人</title>
+  <link rel="stylesheet" href="./static/css/base.css">
+  <link rel="stylesheet" href="./static/css/bootstrap.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/teacherSpace.css">
+  <script src="./static/js/vue.js"></script>
+  <script src="./temScript/courseLink.js"></script>
+  <script src="./temScript/header.js"></script>
+  <script src="./temScript/footer.js"></script>
+</head>
+<style>
+
+</style>
+
+<body>
+
+  <div id="app">
+      <header-space></header-space>
+    <main>
+      <div class="articleLeft">
+        <div class="articleLeftTop">
+          <div class="rizhi">说说</div>
+          <div class="rizhi rizhiActive">日志</div>
+          <div class="clr"></div>
+        </div>
+        <div class="articleLeftBottom">
+          <div class="articleTemplate">
+              <div  class="articleTemplateA"><img src="./static/image/666.svg" alt="">日志模板</div>
+            <div class="articleTemplateA"><img src="./static/image/666.svg" alt="">写日志</div>
+
+            <div class="clr"></div>
+          </div>
+          <div class="pingLunBox">
+            <div class="pingLunImg"><img src="./static/image/Group 3.jpg" alt=""></div>
+            <div class="pingLunContent">
+              <div class="pingLunName">候龙生</div>
+              <div class="pingLunType">发表了文章</div>
+              <div class="pingLunText">
+                侯艳丽，女，1967年4月出生，汉族，中共党员。现任清华大学附属小学党总支书记。全国著名特级教师，教授，博士生导师。女，1967年4月出生，汉族，中共党员。
+              </div>
+              <div class="pingLunBottom">
+                <span class="pingLunZhang"><img src="./static/image/Shape-22.svg" alt="">5</span>
+                <span class="pingLunShuXian">|</span>
+                <span class="pingLunSize">转发</span>
+                <span class="pingLunShuXian">|</span>
+                <span class="pingLunSize">评论</span>
+                <span class="pingLunTime">2018-12-12</span>
+              </div>
+            </div>
+            <div class="clr"></div>
+          </div>
+          <div class="pingLunBox">
+            <div class="pingLunImg"><img src="./static/image/Group 3.jpg" alt=""></div>
+            <div class="pingLunContent">
+              <div class="pingLunName">候龙生</div>
+              <div class="pingLunType">发表了文章</div>
+              <div class="pingLunText">
+                侯艳丽，女，1967年4月出生，汉族，中共党员。现任清华大学附属小学党总支书记。全国著名特级教师，教授，博士生导师。女，1967年4月出生，汉族，中共党员。
+              </div>
+              <div class="pingLunBottom">
+                <span class="pingLunZhang"><img src="./static/image/Shape-22.svg" alt="">5</span>
+                <span class="pingLunShuXian">|</span>
+                <span class="pingLunSize">转发</span>
+                <span class="pingLunShuXian">|</span>
+                <span class="pingLunSize">评论</span>
+                <span class="pingLunTime">2018-12-12</span>
+              </div>
+              <div class="pingLunZhuanFa">
+                <div class="pingLunZhuanFaBox">
+                  <div class="pingLunZhuanFaImg"><img src="./static/image/Group 3.jpg" alt=""></div>
+                  <div class="pingLunZhuanFaContent">
+                    <div class="pingLunZhuanFaNameBox"><span class="pingLunZhuanFaName">陈娜娜</span><span class="pingLunZhuanFaTime">2018-12-12</span></div>
+                    <div class="pingLunZhuanFaText">侯艳丽，女，1967年4月出生，汉族，中共党员。现任清华大学附属小学党总支书记。</div>
+                  </div>
+                  <div class="clr"></div>
+                </div>
+                <div class="pingLunZhuanFaBox">
+                  <div class="pingLunZhuanFaImg"><img src="./static/image/Group 3.jpg" alt=""></div>
+                  <div class="pingLunZhuanFaContent">
+                    <div class="pingLunZhuanFaNameBox"><span class="pingLunZhuanFaName">陈娜娜</span><span class="pingLunZhuanFaTime">2018-12-12</span></div>
+                    <div class="pingLunZhuanFaText">侯艳丽，女，1967年4月出生，汉族，中共党员。现任清华大学附属小学党总支书记。</div>
+                  </div>
+
+                </div>
+                <div class="clr"></div>
+              </div>
+            </div>
+            <div class="clr"></div>
+          </div>
+          <div class="pingLunBox">
+            <div class="pingLunImg"><img src="./static/image/Group 3.jpg" alt=""></div>
+            <div class="pingLunContent">
+              <div class="pingLunName">候龙生</div>
+              <div class="pingLunType">上传了5张照片到相册</div>
+              <div class="pingLunText">
+                <ul class="upImg">
+                  <li><img src="./static/image/Group 3.jpg" alt=""></li>
+                  <li><img src="./static/image/Group 3.jpg" alt=""></li>
+                  <li><img src="./static/image/Group 3.jpg" alt=""></li>
+                  <li><img src="./static/image/Group 3.jpg" alt=""></li>
+                  <li><img src="./static/image/Group 3.jpg" alt=""></li>
+                  <div class="clr"></div>
+                </ul>
+              </div>
+              <div class="pingLunBottom">
+                <span class="pingLunZhang"><img src="./static/image/Shape-22.svg" alt="">5</span>
+                <span class="pingLunShuXian">|</span>
+                <span class="pingLunSize">转发</span>
+                <span class="pingLunShuXian">|</span>
+                <span class="pingLunSize">评论</span>
+                <span class="pingLunTime">2018-12-12</span>
+              </div>
+            </div>
+            <div class="clr"></div>
+          </div>
+        </div>
+      </div>
+      <div class="articleRight">
+          <ul class="articleRightTop">
+            <li><img src="./static/image/Shape-22.svg" alt="">草稿箱</li>
+            <li><img src="./static/image/Shape-22.svg" alt="">回收站</li>
+            <li><img src="./static/image/Shape-22.svg" alt="">设置</li>
+            <li><img src="./static/image/Shape-22.svg" alt="">建议</li>
+          </ul>
+        <div class="personArticleRightBox">
+          <div class="articleRightTitle">日志分类</div>
+          <div class="articleRightAllBox">
+            <div class="articleRightAll"><span>全部日志</span><span>（12）</span></div>
+            <div class="articleRightAll"><span>个人日记</span><span>（12）</span></div>
+            <div class="articleRightAll"><span>文章转载</span><span>（12）</span></div>
+            <div class="articleRightAll"><span>个人日志</span><span>（12）</span></div>
+          </div>
+          <div class="articleRightTitle">搜索日志</div>
+          <div class="articleRightInput">
+            <form action="">
+              <input type="text" name="" id="" placeholder="请输入关键字">
+              <button>搜索</button>
+            </form>
+            <div class="clr"></div>
+          </div>
+          <div class="articleRightTime">
+            <div class="articleTimeTop"><img src="./static/image/10.svg" /><span class="articleYear">2019</span><img
+                src="./static/image/10.svg" /></div>
+            <ul class="articleMonths">
+              <li>1月</li>
+              <li>2月</li>
+              <li>3月</li>
+              <li>4月</li>
+              <li>5月</li>
+              <li>6月</li>
+              <li>7月</li>
+              <li>8月</li>
+              <li>9月</li>
+              <li>10月</li>
+              <li>11月</li>
+              <li>12月</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer-link></footer-link>
+
+  </div>
+
+
+  <script src="./static/js/jquery.min.js"></script>
+  <script src="./static/js/bootstrap.js"></script>
+  <script>
+    new Vue({
+      el: "#app"
+    })
+
+    $(function () {
+      var l = $(".pingLunZhuanFaContent").length
+      $(".pingLunZhuanFaContent").eq(l - 1).css("border-bottom", "none")
+
+    })
+  </script>
+
+</body>
+
+</html>

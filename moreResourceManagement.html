@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>资源管理列表-个人</title>
+  <link rel="stylesheet" href="./static/css/base.css">
+  <link rel="stylesheet" href="./static/css/bootstrap.css">
+  <link rel="stylesheet" href="./static/css/live.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/teacherSpace.css">
+  <link rel="stylesheet" href="./static/css/coursewareSharing.css">
+  <script src="./static/js/vue.js"></script>
+  <script src="./temScript/courseLink.js"></script>
+  <script src="./temScript/header.js"></script>
+  <script src="./temScript/footer.js"></script>
+</head>
+<style>
+  .resourceAdd{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  justify-content: center;
+  align-content: center;
+  top: 0;
+  display: none;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.171);
+}
+.resourceAddBox{
+  width: 26vw;
+  background: #FFFFFF;
+box-shadow: 0 15px 25px 0 rgba(0,0,0,0.15);
+border-radius: 4px;
+position: relative;
+}
+.resourceNoneTips{
+ padding: 0 5vw;
+ font-family: PingFangSC-Regular;
+font-size: 1.042vw;
+color: #000000;
+letter-spacing: 0;
+text-align: center;
+}
+.resourceAddTop{
+  background: #3DBDB6;
+border-radius: 4px 4px 0px 0px;
+text-align: center;
+font-family: PingFangSC-Semibold;
+font-size:1.302vw;
+height: 6vh;
+line-height: 6vh;
+color: #FFFFFF;
+}
+.resourceNone{
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  display: none
+}
+.resourceNoneAdd{
+  width: 15vw;
+  height: 5vh;
+  margin: 0 auto;
+  line-height: 5vh;
+  font-family: PingFangSC-Semibold;
+font-size:1.042vw;
+background: #3DBDB6;
+border-radius: 8px;
+color: #FFFFFF;
+letter-spacing: 0;
+margin-top: 3vh;
+text-align: center;
+}
+.resourceHaveEveryBox{
+  display: flex;
+justify-content: space-between;
+margin-top: 3vh;
+  padding: 0 2vw;
+}
+.resourceHave{
+
+/* display: none */
+}
+.resourceHaveEveryBigBox{
+margin-bottom: 3vh;
+}
+
+.resourceHaveName{
+  font-family: PingFangSC-Regular;
+font-size: 0.885vw;
+color: #000000;
+line-height: 3vh;
+}
+.resourceHaveChange{
+  display: flex;
+  justify-content: space-between;
+  width: 8vw;
+}
+.resourceHaveChange div{
+  height: 3vh;
+  padding:0 1vw;
+  line-height: 3vh;
+  background: #3DBDB6;
+border-radius: 4px;
+font-size: 0.833vw;
+color: #FFFFFF;
+cursor: pointer;
+}
+.resourceHaveNew{
+  height: 6vh;
+  text-align: center;
+  line-height: 6vh;
+  background: #3DBDB6;
+  width: 100%;
+  font-size: 1.042vw;
+  color: #FFFFFF;
+  cursor: pointer;
+  border-radius: 0px 0px 4px 4px;
+}
+.resourceHaveNew img{
+  margin-right: 0.5vw;
+  width: 1.042vw;
+  height: auto;
+  margin-top: -0.5vh
+}
+.resourceAddBiaoDan{
+  position: absolute;
+  top: 5vh;
+  width: 100%;
+  padding: 0 1vw;
+  display: none;
+}
+.resourceAddBiaoDanBigBox{
+width: 100%;
+background: #FFFFFF;
+border: 1px solid #D8D8D8;
+box-shadow: 0 15px 25px 0 rgba(0,0,0,0.15);
+border-radius: 4px;
+padding: 2vh 1vw;
+
+}
+.resourceAddBiaoDanBox{
+  display: flex;
+}
+.resourceBiaoDanName div{
+font-size: 0.885vw;
+line-height: 4vh;
+height: 4vh;
+margin-bottom: 2vh
+}
+.resourceBiaoDanNameInput div{
+  margin-bottom: 2vh;
+  font-family: PingFangSC-Light;
+font-size: 0.833vw;
+color: #FF0000;
+letter-spacing: 0;
+}
+.resourceBiaoDanNameInput input{
+  height: 4vh;
+  opacity: 0.2;
+  width: 15vw;
+  outline: none;
+background: #FFFFFF;
+font-size: 0.833vw;
+border: 1px solid #3B3B3B;
+border-radius: 3px 0px 0px 3px;
+padding-left: 0.2vw;
+
+}
+.resourceAddBiaoDanYesOrNo{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2vw;
+}
+.resourceAddBiaoDanYesOrNo div{
+  width: 8.333vw;
+  height: 5vh;
+  line-height: 5vh;
+  text-align: center;
+  background: #3DBDB6;
+border-radius: 8px;
+font-size: 1.042vw;
+color: #FFFFFF;
+cursor: pointer;
+}
+.resourceShanChu{
+  position: absolute;
+  top: 5vh;
+  width: 100%;
+  padding: 0 1vw;
+display: none;
+}
+.resourceShanChuBox{
+  width: 100%;
+background: #FFFFFF;
+border: 1px solid #D8D8D8;
+box-shadow: 0 15px 25px 0 rgba(0,0,0,0.15);
+border-radius: 4px;
+padding: 2vh 1vw;
+}
+.resourceShanChuTip{
+  padding: 3vh 2vw;
+  font-family: PingFangSC-Regular;
+font-size:1.042vw;
+color: #000000;
+letter-spacing: 0;
+text-align: center;
+}
+.resourceShanChuYesOrNo{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2vw;
+}
+.resourceShanChuYesOrNo div{
+  width: 8.333vw;
+  height: 5vh;
+  line-height: 5vh;
+  text-align: center;
+  background: #3DBDB6;
+border-radius: 8px;
+font-size: 1.042vw;
+color: #FFFFFF;
+cursor: pointer;
+margin-bottom: 2vh
+}
+/* #resourceHeBing{
+  display: block;
+} */
+.rescourGuanLi{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  justify-content: center;
+  align-content: center;
+  top: 0;
+  /* display: none; */
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.171);
+}
+.rescourceGuanLiBox{
+  width: 26vw;
+  background: #FFFFFF;
+box-shadow: 0 15px 25px 0 rgba(0,0,0,0.15);
+border-radius: 4px;
+position: relative;
+
+}
+.rescourceGuanLiHaveBigBox{
+margin-bottom: 3vh;
+}
+.rescourceGuanLiHaveBox{
+  display: flex;
+justify-content: space-between;
+margin-top: 3vh;
+  padding: 0 2vw;
+}
+.rescourceGuanLiHaveLink{
+  height: 3vh;
+  padding:0 2.5vw;
+  line-height: 3vh;
+  background: #3DBDB6;
+border-radius: 4px;
+font-size: 0.833vw;
+
+cursor: pointer;
+}
+.rescourceGuanLiHaveLink a{
+  color: #FFFFFF;
+}
+</style>
+
+<body>
+
+  <div id="app">
+
+    <header-space></header-space>
+
+    <div class="resourceBox">
+      <div class="resourceTop">
+        <div class="teacherResourceName">王老师的资源</div>
+        <div class="teacherResourceSearch">
+          <form action="">
+            <input type="text" name="" id="" placeholder="请输入关键字">
+            <button>搜索</button>
+        </div>
+      </div>
+      <div class="resourceManagement">
+        <div class="resourceGrouping">资源分组管理</div>
+        <div class="resourceGroupingGuanLi">资源管理</div>
+      </div>
+      <div class="resourceCenter">
+        <div class="resourceCenterLeft">日常教学</div>
+        <div class="resourceCenterRightBox">
+          <div class="addResource">新增资源</div>
+          <div class="resourceCenterRight">返回上一级<img src="./static/image/hhlv.svg" alt=""></div>
+        </div>
+      </div>
+      <div class="resourceBottom">
+        <ul>
+          <li v-for="item in items">
+            <div class="microLessonContentTop">
+              <img src="./static/image/photo copy 3.png" alt="">
+              <div class="microFire">
+                <img src="./static/image/47.svg" alt="">
+                <div>533</div>
+              </div>
+              <div class="microPlay"><img src="./static/image/46.svg" alt=""></div>
+            </div>
+            <div class="microTitle">{{item.title}}</div>
+            <div class="microTeacher"><strong>讲师：</strong>{{item.teacher}}<span><strong>科目：</strong>{{item.kemu}}</span></div>
+            <div class="resourceChange">
+              <div class="changeClick">编辑</div>
+              <div class="delateClick" @click="clickNumber()" :data-id="item.id">删除</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="resourceDelate">
+      <div class="resourceBigBox">
+        <div class="resourceDelateBox">
+          <div class="resourceDelateTip">是否删除资源<span> “王老师精品课程1”</span>？</div>
+          <div class="resourceDelateYesOrNo">
+            <div class="resourceDelateNo">取消</div>
+            <div class="resourceDelateYes" @click="removerNumber()">确定</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="resourceAdd">
+      <div class="resourceBigBox">
+        <div class="resourceAddBox">
+          <div class="resourceAddTop">资源分组管理</div>
+          <div class="resourceNone">
+            <div class="resourceNoneTips">您当前尚未创建资源分组，请点击创建资源分组。</div>
+            <div class="resourceNoneAdd">马上创建资源分组</div>
+          </div>
+          <div class="resourceHave">
+            <div class="resourceHaveEveryBigBox">
+              <div class="resourceHaveEveryBox">
+                <div class="resourceHaveName">王老师的资源（111）</div>
+                <div class="resourceHaveChange">
+                  <div class="resourceHaveChangeBianJi">编辑</div>
+                  <div class="resourceHaveChangeDelete">删除</div>
+                </div>
+              </div>
+              <div class="resourceHaveEveryBox">
+                <div class="resourceHaveName">王老师的资源（111）</div>
+                <div class="resourceHaveChange">
+                  <div class="resourceHaveChangeBianJi">编辑</div>
+                  <div class="resourceHaveChangeDelete">删除</div>
+                </div>
+              </div>
+              <div class="resourceHaveEveryBox">
+                <div class="resourceHaveName">王老师的资源（111）</div>
+                <div class="resourceHaveChange">
+                  <div class="resourceHaveChangeBianJi">编辑</div>
+                  <div class="resourceHaveChangeDelete">删除</div>
+                </div>
+              </div>
+            </div>
+            <div class="resourceHaveNew"><img src="./static/image/3456478.svg" alt="">新增分类</div>
+
+          </div>
+
+          <div class="resourceAddBiaoDan">
+            <div class="resourceAddBiaoDanBigBox">
+              <div class="resourceAddBiaoDanBox">
+                <div class="resourceBiaoDanName">
+                  <div>资源分组名称：</div>
+                  <div>资源分组排序：</div>
+                </div>
+                <div class="resourceBiaoDanNameInput">
+                  <div>
+                    <input type="text" name="" id="" placeholder="请输入分组名称,名称相同的分组资源会合并">
+                  </div>
+                  <div>
+                    <input type="text" name="" id="" placeholder="请单行输入">
+                    <div>注：排序数字越大的分组展示会越靠前。</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="resourceAddBiaoDanYesOrNo">
+                <div class="resourceAddBiaoDanNo">取消</div>
+                <div class="resourceAddBiaoDanYes">确定</div>
+              </div>
+            </div>
+
+          </div>
+
+          <div id="resourceDelate1" class="resourceShanChu">
+            <div class="resourceShanChuBox">
+              <div class="resourceShanChuTip">是否删除分组，分组删除后，分组内的所有视频也会一起删除。</div>
+              <div class="resourceShanChuYesOrNo">
+                <div class="resourceShanChuNo">取消</div>
+                <div class="resourceShanChuYes">确定</div>
+              </div>
+            </div>
+          </div>
+          <div id="resourceHeBing" class="resourceShanChu">
+            <div class="resourceShanChuBox">
+              <div class="resourceShanChuTip">检测到分组名称‘王老师精品课程‘已存在，是否合并分组资源？</div>
+              <div class="resourceShanChuYesOrNo">
+                <div class="resourceShanChuNo">取消</div>
+                <div class="resourceShanChuYes">确定</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <div class="rescourGuanLi" style="display:none">
+      <div class="resourceBigBox">
+<div class="rescourceGuanLiBox">
+  <div class="resourceAddTop">资源分组管理</div>
+  <div class="resourceNone" style="display:none">
+    <div class="resourceNoneTips">您当前尚未创建资源分组，请点击创建资源分组。</div>
+    <div class="resourceNoneAdd">马上创建资源分组</div>
+  </div>
+  <div class="rescourceGuanLiHave">
+    <div class="rescourceGuanLiHaveBigBox">
+
+      <div class="rescourceGuanLiHaveBox">
+        <div class="resourceHaveName">王老师的资源（111）</div>
+        <div class="rescourceGuanLiHaveLink"><a href="">资源管理</a> </div>
+      </div>
+      <div class="rescourceGuanLiHaveBox">
+        <div class="resourceHaveName">王老师的资源（111）</div>
+        <div class="rescourceGuanLiHaveLink"><a href="">资源管理</a> </div>
+      </div>
+      <div class="rescourceGuanLiHaveBox">
+        <div class="resourceHaveName">王老师的资源（111）</div>
+        <div class="rescourceGuanLiHaveLink"><a href="">资源管理</a> </div>
+      </div>
+    </div>
+  </div>
+  <div class="resourceAddBiaoDan">
+    <div class="resourceAddBiaoDanBigBox">
+      <div class="resourceAddBiaoDanBox">
+        <div class="resourceBiaoDanName">
+          <div>资源分组名称：</div>
+          <div>资源分组排序：</div>
+        </div>
+        <div class="resourceBiaoDanNameInput">
+          <div>
+            <input type="text" name="" id="" placeholder="请输入分组名称,名称相同的分组资源会合并">
+          </div>
+          <div>
+            <input type="text" name="" id="" placeholder="请单行输入">
+            <div>注：排序数字越大的分组展示会越靠前。</div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="resourceAddBiaoDanYesOrNo">
+        <div class="resourceAddBiaoDanNo">取消</div>
+        <div class="resourceAddBiaoDanYes">确定</div>
+      </div>
+    </div>
+  
+  </div>
+
+
+</div>
+
+      </div>
+    </div>
+
+    <!-- 分页 -->
+    <div class="course-page">
+      <div class="course-page-choose">
+        <div class="course-page-choose-first"><a href="">首页</a></div>
+        <div class="course-page-choose-number">
+          <ul>
+            <li class="font25 leftHover"><a href=""><img src="./static/image/48.svg" alt=""></a></li>
+            <li><a href="">01</a></li>
+            <li><a href="">02</a></li>
+            <li><a href="">03</a></li>
+            <li><a href="">04</a></li>
+            <li><a href="">05</a></li>
+            <li><a href="">06</a></li>
+            <li><a href="">07</a></li>
+            <li class="font25 rightHover"><a href=""><img src="./static/image/480.svg" alt="" class=""></a></li>
+          </ul>
+        </div>
+        <div class="course-page-choose-last"><a href="">尾页</a></div>
+        <div class="clr"></div>
+      </div>
+      <div class="course-page-jump">
+        <span>跳转到</span>
+        <span class="course-page-jump-input">
+          <form action="">
+            <input type="text">
+            <button>GO</button>
+          </form>
+        </span>
+        <span>共155页</span>
+      </div>
+    </div>
+
+    <footer-link></footer-link>
+  </div>
+
+
+  <script src="./static/js/jquery.min.js"></script>
+  <script src="./static/js/bootstrap.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+       data () {
+         return {
+           items:[
+             {
+               title:"初一奥斯卡大家好看撒娇和",
+               teacher:"林智豪",
+               kemu:"英语",
+               id:1231321321
+             },
+             {
+               title:"初一奥斯卡大家好看撒娇和",
+               teacher:"林智豪",
+               kemu:"英语",
+               id:1231321321
+             },
+             {
+               title:"初一奥斯卡大家好看撒娇和",
+               teacher:"林智豪",
+               kemu:"英语",
+               id:1231321321
+             },
+             {
+               title:"初一奥斯卡大家好看撒娇和",
+               teacher:"林智豪",
+               kemu:"英语",
+               id:1231321321
+             },
+             {
+               title:"初一奥斯卡大家好看撒娇和",
+               teacher:"林智豪",
+               kemu:"英语",
+               id:1231321321
+             },
+             {
+               title:"初一奥斯卡大家好看撒娇和",
+               teacher:"林智豪",
+               kemu:"英语",
+               id:1231321321
+             }
+           ]
+         }
+       },
+       methods: {
+         clickNumber:function(){
+           console.log("aaaa")
+         },
+         removerNumber:function(){
+           console.log(this.items)
+           this.items.shift()
+           console.log(this.items)
+         }
+       }
+    })
+    $(function () {
+      $(".resourceBottom ul").addClass("kongTwo")
+
+      //  点击资源删除
+      $(".delateClick").click(function () {
+        $(".resourceDelate").show()
+        var top = $(document).scrollTop();
+        $(document).on('scroll.unable', function (e) {
+          $(document).scrollTop(top);
+        }) // 禁止滚动条滚动
+        console.log($(this).data("id"))
+        
+      })
+      // 取消删除
+      $(".resourceDelateNo").click(function () {
+        $(".resourceDelate").hide()
+        $(document).unbind("scroll.unable"); //取消滚动条禁止
+      })
+      // 点击其他区域隐藏
+      $(".resourceAdd").click(function (e) {
+        $(".resourceAdd").hide()
+        $(document).unbind("scroll.unable"); //取消滚动条禁止
+      })
+      // 点击其他区域隐藏  禁止冒泡 上面一个配合使用
+      $(".resourceAddBox").click(function () {
+        event.stopPropagation()
+      })
+            // 点击其他区域隐藏
+            $(".rescourGuanLi").click(function (e) {
+        $(".rescourGuanLi").hide()
+        $(document).unbind("scroll.unable"); //取消滚动条禁止
+      })
+      // 点击其他区域隐藏  禁止冒泡 上面一个配合使用
+      $(".rescourceGuanLiBox").click(function () {
+        event.stopPropagation()
+      })
+      //  点击资源分组管理  显示
+      $(".resourceGrouping").click(function () {
+        var top = $(document).scrollTop();
+        $(document).on('scroll.unable', function (e) {
+          $(document).scrollTop(top);
+        }) // 禁止滚动条滚动
+        $(".resourceAdd").show()
+      })
+      //  点击资源分组管理  显示
+      $(".resourceGroupingGuanLi").click(function () {
+        var top = $(document).scrollTop();
+        $(document).on('scroll.unable', function (e) {
+          $(document).scrollTop(top);
+        }) // 禁止滚动条滚动
+        $(".rescourGuanLi").show()
+      })
+      
+
+      // 点击新增分类显示
+      $(".resourceHaveNew").click(function () {
+        $(".resourceAddBiaoDan").show()
+        $(".resourceAdd").unbind()
+
+      })
+      // 没有分类时的
+      $(".resourceNoneAdd").click(function () {
+        $(".resourceAddBiaoDan").show()
+        $(".resourceAdd").unbind()
+      })
+      // 点击取消
+      $(".resourceAddBiaoDanNo").click(function () {
+        $(".resourceAddBiaoDan").hide()
+        $(".resourceAdd").click(function (e) {
+          $(".resourceAdd").hide()
+          $(document).unbind("scroll.unable"); //取消滚动条禁止
+        })
+              // 点击新增分类显示
+      $(".resourceHaveNew").click(function () {
+        $(".resourceAddBiaoDan").show()
+        $(".resourceAdd").unbind()
+
+      })
+      })
+      // 点击删除
+      $(".resourceHaveChangeDelete").click(function () {
+        $("#resourceDelate1").show()
+        $(".resourceAdd").unbind()
+        $(".resourceHaveNew").unbind()
+      })
+      // 删除的点击取消
+      $(".resourceShanChuNo").click(function () {
+        $("#resourceDelate1").hide()
+        $(".resourceAdd").click(function (e) {
+          $(".resourceAdd").hide()
+          $(document).unbind("scroll.unable"); //取消滚动条禁止
+        })
+                      // 点击新增分类显示
+      $(".resourceHaveNew").click(function () {
+        $(".resourceAddBiaoDan").show()
+        $(".resourceAdd").unbind()
+
+      })
+      })
+      // 点击编辑
+      $(".resourceHaveChangeBianJi").click(function () {
+        $(".resourceAddBiaoDan").show()
+        $(".resourceAdd").unbind()
+        $(".resourceHaveNew").unbind()
+      })
+
+
+    })
+  </script>
+  <script src="./static/js/micro.js"></script>
+
+</body>
+
+</html>

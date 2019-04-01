@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>教育资源分享</title>
+  <link rel="stylesheet" href="./static/css/base.css">
+  <link rel="stylesheet" href="./static/css/swiper.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/bootstrap.css">
+  <link rel="stylesheet" href="./static/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="./static/css/animate.css">
+  <script src="./static/js/vue.js"></script>
+  <script src="./temScript/footer.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 头部  -->
+    <div id="header">
+      <div id="header-top">
+        <span>
+          <img src="./static/image/1@2x.png" alt="" id="logo">
+        </span>
+        <span id="header-top-right">
+          <img src="./static/image/2.svg" alt="">
+          <span>客服热线：155-0696-3353</span>
+          <span id="header-top-right-right"><span id="name">江</span>同学，欢迎您！您的账户还有<span id="jifen">1000</span>积分&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<img
+              src="./static/image/3.svg" alt=""><span><a>进入个人空间</a></span></span>
+        </span>
+      </div>
+      <div id="header-center">
+        <div>要把教育和知识变成空气一样，弥漫于宇宙</div>
+        <div>洗荡于乾坤，普及众生，人人都有得呼吸</div>
+      </div>
+      <div id="seach">
+        <form action="">
+          <input type="text" placeholder="请输入搜索内容">
+          <button type="button">搜索</button>
+        </form>
+      </div>
+      <div id="header-bottom">
+        <div id="header-bottom-bg"></div>
+        <div id="header-bottom-left">
+          <img src="./static/image/4.svg" alt="">
+          <div>学科分类</div>
+          <img src="./static/image/10.svg" alt="">
+        </div>
+
+
+        <ul id="header-bottom-right">
+          <li>
+            <a href="">
+              <img src="./static/image/5.svg" alt="">
+              <div>学视分享</div>
+            </a>
+          </li>
+          <li>
+            <a href="coursewareSharing.html">
+              <img src="./static/image/6.svg" alt="">
+              <div>课件分享</div>
+            </a>
+          </li>
+          <li>
+            <a href="microLesson.html">
+              <img src="./static/image/7.svg" alt="">
+              <div>微课资源</div>
+            </a>
+          </li>
+          <li>
+            <a href="liveBroadcastCourse.html" target="_blank">
+              <img src="./static/image/8.svg" alt="">
+              <div>课程直播</div>
+            </a>
+          </li>
+          <li>
+            <a href="teacherSpace.html" target="_blank">
+              <img src="./static/image/9.svg" alt="">
+              <div>名师空间</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+
+
+
+
+
+
+    </div>
+    <!-- 新鲜资讯 -->
+    <div id="center">
+      <div id="center-left">
+        <ul id="nav">
+          <li v-for="item in subjectList">
+            <a :href="'coursewareSharing.html?' + 'subjectId=' + item.id">
+              <img src="./static/image/11.svg" alt="">
+              <span class="kemuSpan" v-text="item.name"></span>
+            </a>
+            <div class="subnav">
+              <div class="subNavBigBox" v-for="gradeList in item.gradeList">
+                <div class="subNavTop" v-text="gradeList.name"></div>
+                <div class="subNavBox">
+                  <div class="subLeibie">教材版本：</div>
+                  <div class="subLeibieDetail">
+                    <span v-for="versionList in gradeList.versionList"><a :href="'coursewareSharing.html?' + 'subjectId=' + item.id + '&gradeId=' + gradeList.id +'&versionId=' +versionList.id " v-text="versionList.name"></a></span>
+           
+                  </div>
+                 
+                </div>
+                <div class="subNavBox">
+                  <div class="subLeibie">教材版别：</div>
+                  <div class="subLeibieDetail">
+                    <span v-for="tagList in gradeList.tagList"><a :href="'coursewareSharing.html?' + 'subjectId=' + item.id + '&gradeId=' + gradeList.id +'&tagId=' +tagList.id " v-text="tagList.name"></a></span>
+          
+                  </div>
+                </div>
+                <div class="subNavBox">
+                  <div class="subLeibie"><a href="">类别</a></div>
+                  <div class="subLeibieDetail">
+                    <span>必修1</span>
+                    <span>必修1</span>
+                    <span>必修1</span>
+                    <span>必修1</span>
+                    <span>必修1</span>
+                    <span>必修1</span>
+                    <span>必修1</span>
+                    <span>必修1</span>
+                    <span>必修1</span>
+                    <span>必修1</span>
+                    <span>必修1</span>
+                    <span>必修1</span>
+                  </div>
+                </div>
+                <div class="subNavBox">
+                  <div class="subLeibie"><a href="">类别</a></div>
+                  <div class="subLeibieDetail">
+                    <span>必修1</span>
+                    <span>必修1</span>
+                    <span>必修1</span>
+                    <span>必修1</span>
+                    <span>必修1</span>
+                    <span>必修1</span>
+                    <span>必修1</span>
+                    <span>必修1</span>
+                    <span>必修1</span>
+                    <span>必修1</span>
+                    <span>必修1</span>
+                    <span>必修1</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div id="center-right">
+        <div id="center-right-top">
+          <div class="list">
+            <ul>
+              <li class="p4"><a href="#"><img src="./static/image/Group 3.jpg" alt="" /></a></li>
+              <li class="p3"><a href="#"><img src="./static/image/Group 36.png" alt="" /></a></li>
+              <li class="p2"><a href="#"><img src="./static/image/Group 3.jpg" alt="" /></a></li>
+              <li class="p1"><a href="#"><img src="./static/image/Group 36.png" alt="" /></a></li>
+            </ul>
+          </div>
+          <div class="buttons">
+            <a href="javascript:;"><span class="black blue"></span></a>
+            <a href="javascript:;"><span class="black"></span></a>
+            <a href="javascript:;"><span class="black"></span></a>
+            <a href="javascript:;"><span class="black"></span></a>
+          </div>
+        </div>
+        <div class="clr"></div>
+        <div class="buttonabsolute">
+          <div id="center-right-center">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">Slide 1</div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 5</div>
+              <div class="swiper-slide">Slide 6</div>
+              <div class="swiper-slide">Slide 7</div>
+              <div class="swiper-slide">Slide 8</div>
+              <div class="swiper-slide">Slide 9</div>
+              <div class="swiper-slide">Slide 10</div>
+            </div>
+
+          </div>
+          <div class="next"><img src="./static/image/300.svg" alt="" /></div>
+          <div class="prev"><img src="./static/image/30.svg" alt="" /></div>
+        </div>
+        <div class="clr"></div>
+        <div id="center-right-bottom">
+          <div id="center-right-bottom-left-top">
+            <span class="xxzx">新鲜资讯</span>
+            <span class="more"><img src="./static/image/31.svg" alt="">MORE</span>
+          </div>
+          <div id="center-right-bottom-left-bottom">
+            <ul>
+              <li>
+                <strong>2018年12月8日</strong><a href="">欢迎厦门市教育局领导莅临本公司进行指导</a>
+              </li>
+              <li>
+                <strong>2018年12月8日</strong><a href="">欢迎厦门市教育局领导莅临本公司进行指导</a>
+              </li>
+              <li>
+                <strong>2018年12月8日</strong> <a href="">欢迎厦门市教育局领导莅临本公司进行指导</a>
+              </li>
+              <li>
+                <strong>2018年12月8日</strong><a href="">欢迎厦门市教育局领导莅临本公司进行指导</a>
+              </li>
+              <li>
+                <strong>2018年12月8日</strong> <a href="">欢迎厦门市教育局领导莅临本公司进行指导</a>
+              </li>
+              <li>
+                <strong>2018年12月8日</strong> <a href="">欢迎厦门市教育局领导莅临本公司进行指导</a>
+              </li>
+            </ul>
+          </div>
+          <div id="center-right-bottom-right-top">
+            <span><span class="glyphicon glyphicon-menu-left"></span></span>
+            <span><span class="glyphicon glyphicon-menu-right"></span></span>
+          </div>
+          <div id="center-right-bottom-right-bottom">
+            <div id="center-right-bottom-right-bottom-left">
+              <div>2018年12月8日</div>
+              <div>
+                <span>欢迎厦门市教育局领导莅临本公司进行指导</span>
+              </div>
+
+            </div>
+            <div id="center-right-bottom-right-bottom-right">
+              <div>查看详情</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 学视分享 -->
+    <div id="xsfx">
+      <div id="xsfx-title">学视分享</div>
+      <div id="line"></div>
+      <div id="picScroll-left-xsfx">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img class="xsfx-link-bg" src="./static/image/Group 38.png" alt="">
+            <div class="xsfx-link">
+              <div class="star">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+              </div>
+              <div class="xsfx-km">高一语文</div>
+              <div class="xsfx-km-mc"><strong>名师打造：</strong>新人教版必修1高中语文（全册）</div>
+              <div class="xsfx-km-mc-link"> <a href=""><img src="./static/image/34.svg" alt=""></a> </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img class="xsfx-link-bg" src="./static/image/Group 38.png" alt="">
+            <div class="xsfx-link">
+              <div class="star">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+              </div>
+              <div class="xsfx-km">高一语文</div>
+              <div class="xsfx-km-mc"><strong>名师打造：</strong>新人教版必修1高中语文（全册）</div>
+              <div class="xsfx-km-mc-link"> <a href=""><img src="./static/image/34.svg" alt=""></a> </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img class="xsfx-link-bg" src="./static/image/Group 38.png" alt="">
+            <div class="xsfx-link">
+              <div class="star">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+              </div>
+              <div class="xsfx-km">高一语文</div>
+              <div class="xsfx-km-mc"><strong>名师打造：</strong>新人教版必修1高中语文（全册）</div>
+              <div class="xsfx-km-mc-link"> <a href=""><img src="./static/image/34.svg" alt=""></a> </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img class="xsfx-link-bg" src="./static/image/Group 38.png" alt="">
+            <div class="xsfx-link">
+              <div class="star">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+              </div>
+              <div class="xsfx-km">高一语文</div>
+              <div class="xsfx-km-mc"><strong>名师打造：</strong>新人教版必修1高中语文（全册）</div>
+              <div class="xsfx-km-mc-link"> <a href=""><img src="./static/image/34.svg" alt=""></a> </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img class="xsfx-link-bg" src="./static/image/Group 38.png" alt="">
+            <div class="xsfx-link">
+              <div class="star">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+              </div>
+              <div class="xsfx-km">高一语文</div>
+              <div class="xsfx-km-mc"><strong>名师打造：</strong>新人教版必修1高中语文（全册）</div>
+              <div class="xsfx-km-mc-link"> <a href=""><img src="./static/image/34.svg" alt=""></a> </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img class="xsfx-link-bg" src="./static/image/Group 38.png" alt="">
+            <div class="xsfx-link">
+              <div class="star">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+                <img src="./static/image/32.svg" alt="">
+              </div>
+              <div class="xsfx-km">高一语文</div>
+              <div class="xsfx-km-mc"><strong>名师打造：</strong>新人教版必修1高中语文（全册）</div>
+              <div class="xsfx-km-mc-link"> <a href=""><img src="./static/image/34.svg" alt=""></a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="next-two"><img src="./static/image/300.svg" alt=""></div>
+      <div class="prev-two"><img src="./static/image/30.svg" alt=""></div>
+    </div>
+    <!-- 资源推荐 -->
+    <div id="zytj">
+      <div id="zytj-top">
+        <span id="zytj-top-title">
+          <div>资源推荐</div>
+        </span>
+        <span class="zytj-top-chhoose clickspan"> 教案</span>
+        <span class="zytj-top-chhoose clickspan">课件</span>
+        <span class="zytj-top-chhoose clickspan">试卷</span>
+        <span class="zytj-top-chhoose clickspan">学案</span>
+        <span class="zytj-top-chhoose clickspan">素材</span>
+        <span id="zytj-top-xknj">
+          <div id="zytj-top-xknj-xk">学科<span class="glyphicon glyphicon-menu-down"></span></div>
+          <div id="zytj-top-xknj-nj">年级<span class="glyphicon glyphicon-menu-down"></span></div>
+          <div id="zytj-top-xknj-cz">搜索</div>
+        </span>
+      </div>
+      <div id="zytj-bottom">
+        <div id="zytj-bottom-left">
+          <div id="rmzy">
+            <img src="./static/image/35.svg" alt="">
+            <span id="rmzy-title">
+              <div>热门资源</div>
+              <div id="rmzy-change">换一批</div>
+            </span>
+          </div>
+          <div id="rmzy-zy">
+            <ul>
+              <li>
+                <div class="xuhao onecolor">1</div>
+                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href="" title="欢迎厦门市教育局领导莅临本公司进行指导欢迎厦门市教育局领导莅临本公司进行指导 ">
+                      欢迎厦门市教育局领导莅临本公司进行指导欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+                <div class="clr"></div>
+              </li>
+              <li>
+                <div class="xuhao twocolor">2</div>
+                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本育局领导莅临本育局领导莅临本公司进行指导
+                    </a></span></div>
+              </li>
+              <li>
+                <div class="xuhao threecolor">3</div>
+                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+              </li>
+              <li>
+                <div class="xuhao">4</div>
+                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+              </li>
+              <li>
+                <div class="xuhao">5</div>
+                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+              </li>
+              <li>
+                <div class="xuhao">6</div>
+                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+              </li>
+              <li>
+                <div class="xuhao">7</div>
+                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+              </li>
+              <li>
+                <div class="xuhao">8</div>
+                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="zytj-bottom-right">
+          <div id="zxzy">
+            <img src="./static/image/36.svg" alt="">
+            <span id="zxzy-title">
+              <div>最新资源</div>
+              <div id="zxzy-change">换一批</div>
+            </span>
+          </div>
+          <div id="zxzy-zy">
+            <ul>
+              <li>
+                <div class="xuhao onecolor">1</div>
+                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公市教育局领导莅临市教育局领导莅临市教育局领导莅临司进行指导
+                    </a></span></div>
+              </li>
+              <li>
+                <div class="xuhao twocolor">2</div>
+                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+              </li>
+              <li>
+                <div class="xuhao threecolor">3</div>
+                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+              </li>
+              <li>
+                <div class="xuhao">4</div>
+                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+              </li>
+              <li>
+                <div class="xuhao">5</div>
+                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+              </li>
+              <li>
+                <div class="xuhao">6</div>
+                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+              </li>
+              <li>
+                <div class="xuhao">7</div>
+                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+              </li>
+              <li>
+                <div class="xuhao">8</div>
+                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 试题资源 -->
+    <div id="stzy">
+      <div id="stzy-top">
+        <div id="stzy-top-title">
+          <div>试题资源</div>
+        </div>
+        <div id="stzy-top-right">
+          <div id="stzy-choose">
+            <div id="sttj-top-xj" class="stzy-choose-xz">年级<span class="glyphicon glyphicon-menu-down"></span></div>
+            <div id="sttj-top-xq" class="stzy-choose-xz">学期<span class="glyphicon glyphicon-menu-down"></span></div>
+            <div id="sttj-top-km" class="stzy-choose-xz">科目<span class="glyphicon glyphicon-menu-down"></span></div>
+            <div id="sttj-top-zt" class="stzy-choose-xz">主题<span class="glyphicon glyphicon-menu-down"></span></div>
+            <div id="sttj-top-dq" class="stzy-choose-xz">地区<span class="glyphicon glyphicon-menu-down"></span></div>
+            <div id="sttj-top-nj" class="stzy-choose-xz">年级<span class="glyphicon glyphicon-menu-down"></span></div>
+            <div id="stzy-cz">搜索</div>
+          </div>
+        </div>
+      </div>
+      <div id="stzy-bottom">
+        <div id="stzy-bottom-left">
+          <div class="stzy-bottom-header">
+            <div class="stzy-bottom-header-left"><img src="./static/image/37.svg" alt="">初中试题</div>
+            <div class="stzy-bottom-header-right"><img src="./static/image/38.svg" alt="">MORE</div>
+          </div>
+          <div class="stzy-img"><img src="./static/image/1545794033(1).jpg" alt=""></div>
+          <div>
+            <ul>
+              <li>
+                <div class="stzy-dian"></div>
+                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公市教育局领导莅临本公市教育局领导莅临本公市教育局领导莅临本公司进行指导
+                    </a></span></div>
+              </li>
+              <li>
+                <div class="stzy-dian"></div>
+                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领市教育局领导莅临本公 导莅临本公司进行指导 </a></span></div>
+              </li>
+              <li>
+                <div class="stzy-dian"></div>
+                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育asfsaasd局领导莅临本公司进行指导 </a></span></div>
+              </li>
+              <li>
+                <div class="stzy-dian"></div>
+                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+              </li>
+              <li>
+                <div class="stzy-dian"></div>
+                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="stzy-bottom-right">
+          <div class="stzy-bottom-header">
+            <div class="stzy-bottom-header-left"><img src="./static/image/37.svg" alt="">高中试题</div>
+            <div class="stzy-bottom-header-right"><img src="./static/image/38.svg" alt="">MORE</div>
+          </div>
+          <div class="stzy-img"><img src="./static/image/1545794033(1).jpg" alt=""></div>
+          <div>
+            <ul>
+              <li>
+                <div class="stzy-dian"></div>
+                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+              </li>
+              <li>
+                <div class="stzy-dian"></div>
+                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+              </li>
+              <li>
+                <div class="stzy-dian"></div>
+                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+              </li>
+              <li>
+                <div class="stzy-dian"></div>
+                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+              </li>
+              <li>
+                <div class="stzy-dian"></div>
+                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 底部搜索 -->
+    <div id="bottom-seach">
+      <div id="bottom-seach-title">人的知识愈广，人的本身也愈臻完善。</div>
+      <div id="bottom-seach-input">
+        <form action="">
+          <input type="text" placeholder="请输入搜索内容">
+          <button type="button">搜索</button>
+        </form>
+      </div>
+    </div>
+    <!-- 底部 -->
+    <footer-link></footer-link>
+
+  </div>
+
+
+  <script src="./static/js/jquery.min.js"></script>
+  <script src="./static/js/bootstrap.js"></script>
+  <script src="./temScript/header.js"></script>
+  <script src="./static/js/swiper.min.js"></script>
+  <script src="./static/js/jquery-ui.min.js"></script>
+  <script>
+    $.ajax({
+      type: "post",
+      url: "http://192.168.123.4:8080/kio/public/getSubjectList",  
+      success: function (res) {
+        console.log(res)
+      }
+    });
+    new Vue({
+      el: "#app",
+      data() {
+        return {
+          subjectList: ""
+        }
+      },
+      methods: {
+        getData() {
+          function compareByOrderNumber(a, b) {
+            return a.orderNumber - b.orderNumber;
+          }
+
+          var _this = this
+          
+          $.post('http://192.168.123.4:8080/kio/public/getSubjectList').then(function (res) {
+
+            _this.subjectList = res.subjectList.sort(compareByOrderNumber);
+                
+            for (var i = 0; i < _this.subjectList.length; i++) {
+              _this.subjectList[i].gradeList = res.subjectList[i].gradeList.sort(compareByOrderNumber)
+            }
+          })
+        }
+      },
+      created() {
+        this.getData();
+      },
+      mounted() {}
+    })
+
+
+
+        // ..
+
+
+
+    var swiper = new Swiper('#center-right-center', {
+      slidesPerView: 3,
+      spaceBetween: "1.5%",
+      slidesPerGroup: 3,
+      loop: true,
+      loopFillGroupWithBlank: true,
+      navigation: {
+        nextEl: '.next',
+        prevEl: '.prev',
+      },
+    });
+
+
+    var swiper1 = new Swiper("#picScroll-left-xsfx", {
+      slidesPerView: 4,
+      spaceBetween: "1.5%",
+      slidesPerGroup: 1,
+      loop: true,
+      loopFillGroupWithBlank: true,
+      navigation: {
+        nextEl: '.next-two',
+        prevEl: '.prev-two',
+      },
+    });
+  </script>
+  <script src="./static/js/lunbotu.js"></script>
+  <script src="./static/js/index.js"></script>
+</body>
+
+</html>
