@@ -16,6 +16,7 @@
   <script src="./temScript/footer.js"></script>
 </head>
 <!-- 首页 -->
+
 <body>
   <div id="app">
     <!-- 头部  -->
@@ -27,8 +28,9 @@
         <span id="header-top-right">
           <img src="./static/image/2.svg" alt="">
           <span>客服热线：155-0696-3353</span>
-          <span id="header-top-right-right"><span id="name">江</span>同学，欢迎您！您的账户还有<span id="jifen">1000</span>积分&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<img
-              src="./static/image/3.svg" alt=""><span><a>进入个人空间</a></span></span>
+          <span id="header-top-right-right"><span id="name">江</span>同学，欢迎您！您的账户还有<span
+              id="jifen">1000</span>积分&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<img src="./static/image/3.svg"
+              alt=""><span><a>进入个人空间</a></span></span>
         </span>
       </div>
       <div id="header-center">
@@ -106,52 +108,31 @@
                 <div class="subNavBox">
                   <div class="subLeibie">教材版本：</div>
                   <div class="subLeibieDetail">
-                    <span v-for="versionList in gradeList.versionList"><a :href="'coursewareSharing.html?' + 'subjectId=' + item.id + '&gradeId=' + gradeList.id +'&versionId=' +versionList.id " v-text="versionList.name"></a></span>
-           
+                    <span v-for="versionList in gradeList.versionList"><a
+                        :href="'coursewareSharing.html?' + 'subjectId=' + item.id + '&gradeId=' + gradeList.id +'&versionId=' +versionList.id "
+                        v-text="versionList.name"></a></span>
+
                   </div>
-                 
+
                 </div>
                 <div class="subNavBox">
                   <div class="subLeibie">教材版别：</div>
                   <div class="subLeibieDetail">
-                    <span v-for="tagList in gradeList.tagList"><a :href="'coursewareSharing.html?' + 'subjectId=' + item.id + '&gradeId=' + gradeList.id +'&tagId=' +tagList.id " v-text="tagList.name"></a></span>
-          
+                    <span v-for="tagList in gradeList.tagList"><a
+                        :href="'coursewareSharing.html?' + 'subjectId=' + item.id + '&gradeId=' + gradeList.id +'&tagId=' +tagList.id "
+                        v-text="tagList.name"></a></span>
+
                   </div>
                 </div>
                 <div class="subNavBox">
-                  <div class="subLeibie"><a href="">类别</a></div>
+                  <div class="subLeibie">单元：</div>
                   <div class="subLeibieDetail">
-                    <span>必修1</span>
-                    <span>必修1</span>
-                    <span>必修1</span>
-                    <span>必修1</span>
-                    <span>必修1</span>
-                    <span>必修1</span>
-                    <span>必修1</span>
-                    <span>必修1</span>
-                    <span>必修1</span>
-                    <span>必修1</span>
-                    <span>必修1</span>
-                    <span>必修1</span>
+                    <span v-for="unitList in gradeList.unitList"><a
+                        :href="'coursewareSharing.html?' + 'subjectId=' + item.id + '&gradeId=' + gradeList.id +'&unitId=' +unitList.id "
+                        v-text="unitList.name"></a></span>
                   </div>
                 </div>
-                <div class="subNavBox">
-                  <div class="subLeibie"><a href="">类别</a></div>
-                  <div class="subLeibieDetail">
-                    <span>必修1</span>
-                    <span>必修1</span>
-                    <span>必修1</span>
-                    <span>必修1</span>
-                    <span>必修1</span>
-                    <span>必修1</span>
-                    <span>必修1</span>
-                    <span>必修1</span>
-                    <span>必修1</span>
-                    <span>必修1</span>
-                    <span>必修1</span>
-                    <span>必修1</span>
-                  </div>
-                </div>
+
               </div>
 
             </div>
@@ -163,7 +144,8 @@
         <div id="center-right-top">
           <div class="list">
             <ul>
-              <li v-for="(item,index) in AdvertList" :class="'p' + index" ><a href="#"><img :src="item.imagePath" alt="" /></a></li>
+              <li v-for="(item,index) in AdvertList" :class="'p' + index"><a href="#"><img :src="item.imagePath"
+                    alt="" /></a></li>
               <!-- <a class="p3"><a href="#"><img :src="AdvertList[0].imagePath" alt="" /></a></a>
               <li class="p2"><a href="#"><img :src="AdvertList[0].imagePath" alt="" /></a></li>
               <li class="p1"><a href="#"><img :src="AdvertList[0].imagePath" alt="" /></a></li> -->
@@ -374,7 +356,8 @@
             <ul>
               <li>
                 <div class="xuhao onecolor">1</div>
-                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href="" title="欢迎厦门市教育局领导莅临本公司进行指导欢迎厦门市教育局领导莅临本公司进行指导 ">
+                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href=""
+                      title="欢迎厦门市教育局领导莅临本公司进行指导欢迎厦门市教育局领导莅临本公司进行指导 ">
                       欢迎厦门市教育局领导莅临本公司进行指导欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
                 <div class="clr"></div>
               </li>
@@ -385,27 +368,33 @@
               </li>
               <li>
                 <div class="xuhao threecolor">3</div>
-                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span>
+                </div>
               </li>
               <li>
                 <div class="xuhao">4</div>
-                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span>
+                </div>
               </li>
               <li>
                 <div class="xuhao">5</div>
-                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span>
+                </div>
               </li>
               <li>
                 <div class="xuhao">6</div>
-                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span>
+                </div>
               </li>
               <li>
                 <div class="xuhao">7</div>
-                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span>
+                </div>
               </li>
               <li>
                 <div class="xuhao">8</div>
-                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+                <div class="rmzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span>
+                </div>
               </li>
             </ul>
           </div>
@@ -422,36 +411,44 @@
             <ul>
               <li>
                 <div class="xuhao onecolor">1</div>
-                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公市教育局领导莅临市教育局领导莅临市教育局领导莅临司进行指导
+                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a
+                      href="">欢迎厦门市教育局领导莅临本公市教育局领导莅临市教育局领导莅临市教育局领导莅临司进行指导
                     </a></span></div>
               </li>
               <li>
                 <div class="xuhao twocolor">2</div>
-                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span>
+                </div>
               </li>
               <li>
                 <div class="xuhao threecolor">3</div>
-                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span>
+                </div>
               </li>
               <li>
                 <div class="xuhao">4</div>
-                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span>
+                </div>
               </li>
               <li>
                 <div class="xuhao">5</div>
-                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span>
+                </div>
               </li>
               <li>
                 <div class="xuhao">6</div>
-                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span>
+                </div>
               </li>
               <li>
                 <div class="xuhao">7</div>
-                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span>
+                </div>
               </li>
               <li>
                 <div class="xuhao">8</div>
-                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+                <div class="zxzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span>
+                </div>
               </li>
             </ul>
           </div>
@@ -487,24 +484,29 @@
             <ul>
               <li>
                 <div class="stzy-dian"></div>
-                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公市教育局领导莅临本公市教育局领导莅临本公市教育局领导莅临本公司进行指导
+                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a
+                      href="">欢迎厦门市教育局领导莅临本公市教育局领导莅临本公市教育局领导莅临本公市教育局领导莅临本公司进行指导
                     </a></span></div>
               </li>
               <li>
                 <div class="stzy-dian"></div>
-                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领市教育局领导莅临本公 导莅临本公司进行指导 </a></span></div>
+                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领市教育局领导莅临本公 导莅临本公司进行指导
+                    </a></span></div>
               </li>
               <li>
                 <div class="stzy-dian"></div>
-                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育asfsaasd局领导莅临本公司进行指导 </a></span></div>
+                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育asfsaasd局领导莅临本公司进行指导
+                    </a></span></div>
               </li>
               <li>
                 <div class="stzy-dian"></div>
-                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span>
+                </div>
               </li>
               <li>
                 <div class="stzy-dian"></div>
-                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span>
+                </div>
               </li>
             </ul>
           </div>
@@ -519,23 +521,28 @@
             <ul>
               <li>
                 <div class="stzy-dian"></div>
-                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span>
+                </div>
               </li>
               <li>
                 <div class="stzy-dian"></div>
-                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span>
+                </div>
               </li>
               <li>
                 <div class="stzy-dian"></div>
-                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span>
+                </div>
               </li>
               <li>
                 <div class="stzy-dian"></div>
-                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span>
+                </div>
               </li>
               <li>
                 <div class="stzy-dian"></div>
-                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span></div>
+                <div class="stzy-name"> <strong>2018年12月8日</strong><span><a href="">欢迎厦门市教育局领导莅临本公司进行指导 </a></span>
+                </div>
               </li>
             </ul>
           </div>
@@ -564,27 +571,27 @@
   <script src="./static/js/swiper.min.js"></script>
   <script src="./static/js/jquery-ui.min.js"></script>
   <script>
-    // $.ajax({
-    //   type: "post",
-    //   url: "http://192.168.123.4:8080/kio/public/getSubjectList",  
-    //   success: function (res) {
-    //     console.log(res)
-    //   }
-    // });
     $.ajax({
-      type: "get",
-      url: "http://192.168.123.100:8080/kio/public/getAdvertList",  
+      type: "post",
+      url: "http://192.168.123.4:8080/kio/public/getSubjectList",
       success: function (res) {
         console.log(res)
       }
     });
+    // $.ajax({
+    //   type: "get",
+    //   url: "http://192.168.123.100:8080/kio/public/getAdvertList",  
+    //   success: function (res) {
+    //     console.log(res)
+    //   }
+    // });
 
     new Vue({
       el: "#app",
       data() {
         return {
           subjectList: "",
-          AdvertList:""
+          AdvertList: ""
         }
       },
       methods: {
@@ -594,22 +601,22 @@
           }
 
           var _this = this
-          
-          // $.post('http://192.168.123.4:8080/kio/public/getSubjectList').then(function (res) {
 
-          //   _this.subjectList = res.subjectList.sort(compareByOrderNumber);
-                
-          //   for (var i = 0; i < _this.subjectList.length; i++) {
-          //     _this.subjectList[i].gradeList = res.subjectList[i].gradeList.sort(compareByOrderNumber)
-          //   }
+          $.post('http://192.168.123.4:8080/kio/public/getSubjectList').then(function (res) {
+
+            _this.subjectList = res.subjectList.sort(compareByOrderNumber);
+
+            for (var i = 0; i < _this.subjectList.length; i++) {
+              _this.subjectList[i].gradeList = res.subjectList[i].gradeList.sort(compareByOrderNumber)
+            }
+          })
+
+          //           $.get('http://192.168.123.100:8080/kio/public/getAdvertList').then(function (res) {
+
+          //                   _this.AdvertList = res.advertList
+          //                   console.log(_this.AdvertList)
+
           // })
-
-          $.get('http://192.168.123.100:8080/kio/public/getAdvertList').then(function (res) {
-
-                  _this.AdvertList = res.advertList
-                  console.log(_this.AdvertList)
-
-})
 
         }
       },

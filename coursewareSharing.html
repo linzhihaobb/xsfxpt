@@ -33,24 +33,14 @@
           <div class="divBottom">
             <span class="jiachu">类别：</span>
             <span class="clickSpan chooseSpan">全部</span>
-            <span class="clickSpan">试题</span>
-            <span class="clickSpan">教案</span>
-            <span class="clickSpan">课件</span>
-            <span class="clickSpan">学案</span>
-            <span class="clickSpan">素材</span>
-            <span class="clickSpan">论文</span>
-            <span class="clickSpan">教学案</span>
+            <span class="clickSpan" v-for="item in categoryList"><a href="#" v-text="item.name"></a></span>
           </div>
           <div class="divBottom">
             <span class="jiachu">属性：</span>
+            <span v-for="item in propertyList">
             <div class="clickRadio clickRadioBg"><span class="glyphicon-th-list glyphicon glyphicon-ok"></span></div>
-            <span class="radioFont">打包资源</span>
-            <div class="clickRadio"><span class="glyphicon-th-list glyphicon glyphicon-ok"></span></div>
-            <span class="radioFont">精品资源</span>
-            <div class="clickRadio"><span class="glyphicon-th-list glyphicon glyphicon-ok"></span></div>
-            <span class="radioFont">免费资源</span>
-            <div class="clickRadio"><span class="glyphicon-th-list glyphicon glyphicon-ok"></span></div>
-            <span class="radioFont">最新资源</span>
+            <span class="radioFont" v-text="item.name"></span>
+          </span>
           </div>
           <div class="divBottom">
             <span class="jiachu">年份：</span>
@@ -66,7 +56,7 @@
           <div>
             <span class="jiachu">区域：</span>
             <span class="clickSpan  chooseSpan">全部</span>
-            <span class="clickSpan" v-for="item in areaList"><a href="">{{item.name}}</a></span>
+            <span class="clickSpan" v-for="item in areaList"><a href="#" v-text="item.name"></a></span>
           </div>
         </div>
         <div class="nszwz-center-right">
@@ -77,37 +67,22 @@
             <span class="spanPadding">|</span>
             <span class="nianjichoose">高中</span>
           </div>
+          <div v-for="item in gradeList" v-if="item.id == gradeId">
           <div class="jiaocaiBottom">
             <span class="jiachu">教材版本：</span>
-            <span class="clickSpan  chooseSpan">新人教版</span>
-            <span class="clickSpan">北师大版</span>
-            <span class="clickSpan">苏教版</span>
-            <span class="clickSpan">粤教版</span>
-            <span class="clickSpan">语文版</span>
-            <span class="clickSpan">鲁人版</span>
-            <span class="clickSpan">沪教版</span>
+           
+            <span class="clickSpan  chooseSpan" v-for="tagList in item.tagList"> <a href="#" v-text="tagList.name"></a></span>
+     
           </div>
           <div class="jiaocaiBottom">
             <span class="jiachu">教材版别：</span>
-            <span class="clickSpan  chooseSpan">期中</span>
-            <span class="clickSpan">期末</span>
-            <span class="clickSpan">月考</span>
-            <span class="clickSpan">复习</span>
-            <span class="clickSpan">练习</span>
-            <span class="clickSpan">单元测试</span>
-            <span class="clickSpan">竞赛</span>
-            <span class="clickSpan">综合测试</span>
-            <span class="clickSpan">知识点分析</span>
+            <span class="clickSpan  chooseSpan" v-for="versionList in item.versionList"> <a href="#" v-text="versionList.name"></a></span>
           </div>
           <div class="jiaocaiBottom">
             <span class="jiachu">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;元：</span>
-            <span class="clickSpan  chooseSpan">一轮复习</span>
-            <span class="clickSpan">二轮复习</span>
-            <span class="clickSpan">三轮冲刺</span>
-            <span class="clickSpan">高考模拟</span>
-            <span class="clickSpan">高考猜题</span>
-            <span class="clickSpan">历年真题</span>
+            <span class="clickSpan  chooseSpan" v-for="unitList in item.unitList"> <a href="#" v-text="unitList.name"></a></span>
           </div>
+        </div>
           <div>
             <span class="jiachu" style="float:left;line-height: 5.556vh">结果搜索：</span>
             <form action="">
@@ -307,18 +282,7 @@
     </div>
     <!-- 底部 -->
     <footer-link></footer-link>
-
   </div>
-
-
-
-
-
-
-
-
-
-
   <script src="./static/js/jquery.min.js"></script>
   <script src="./static/js/bootstrap.js"></script>
   <script src="./temScript/header.js"></script>
@@ -330,6 +294,8 @@
       // url: "http://192.168.123.4:8080/kio/public/getSubjectList",
       // url:" http://192.168.123.4:8080/kio/public/getVersionList?gradeId=76cc18981d124af9847d14b955494107",
       url:" http://192.168.123.4:8080/kio/public/getGradeList",
+      // url:" http://192.168.123.4:8080/kio/public/getCategoryList",
+      // url:" http://192.168.123.4:8080/kio/public/getPropertyList",
       // url: " http://192.168.123.4:8080/kio/public/getAreaList",
 
       success: function (res) {
@@ -342,7 +308,10 @@
         return {
           gradeList: "",
           areaList: "",
-          subjectId:''
+          subjectId:'',
+          gradeId:"",
+          categoryList:"",
+          propertyList:""
         }
       },
       methods: {
@@ -359,14 +328,24 @@
           
           var _this = this
           _this.subjectId = GetQueryString("subjectId")
+          _this.gradeId= GetQueryString("gradeId")
           console.log(_this.subjectId)
           $.post('http://192.168.123.4:8080/kio/public/getGradeList').then(
             function (res) {
               _this.gradeList = res.gradeList.sort(compareByOrderNumber)
             })
+
           $.post('http://192.168.123.4:8080/kio/public/getAreaList').then(
             function (res) {
               _this.areaList = res.areaList.sort(compareByOrderNumber)
+            })
+            $.post("http://192.168.123.4:8080/kio/public/getCategoryList").then(
+            function (res) {
+              _this.categoryList = res.categoryList.sort(compareByOrderNumber)
+            })
+            $.post("http://192.168.123.4:8080/kio/public/getPropertyList").then(
+            function (res) {
+              _this.propertyList = res.propertyList.sort(compareByOrderNumber)
             })
         }
       },
