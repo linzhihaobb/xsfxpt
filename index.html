@@ -596,6 +596,7 @@
       },
       methods: {
         getData() {
+
           function compareByOrderNumber(a, b) {
             return a.orderNumber - b.orderNumber;
           }
@@ -603,20 +604,15 @@
           var _this = this
 
           $.post('http://192.168.123.4:8080/kio/public/getSubjectList').then(function (res) {
-
             _this.subjectList = res.subjectList.sort(compareByOrderNumber);
-
             for (var i = 0; i < _this.subjectList.length; i++) {
               _this.subjectList[i].gradeList = res.subjectList[i].gradeList.sort(compareByOrderNumber)
-            }
+            };
           })
 
-          //           $.get('http://192.168.123.100:8080/kio/public/getAdvertList').then(function (res) {
-
-          //                   _this.AdvertList = res.advertList
-          //                   console.log(_this.AdvertList)
-
-          // })
+          $.get('http://192.168.123.100:8080/kio/public/getAdvertList').then(function (res) {
+            _this.AdvertList = res.advertList
+          })
 
         }
       },
