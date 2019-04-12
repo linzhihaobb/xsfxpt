@@ -1,6 +1,6 @@
 var $a = $(".buttons a");
 var $s = $(".buttons span");
-var cArr = ["p4", "p3", "p2", "p1"];
+var cArr = ["p0", "p1", "p2", "p3"];
 var index = 0;
 //上一张
 function previmg() {
@@ -79,13 +79,13 @@ function show() {
 }
 
 //点击class为p2的元素触发上一张照片的函数
-$(document).on("click", ".p2", function () {
+$(document).on("click", ".p1", function () {
   previmg();
   return false; //返回一个false值，让a标签不跳转
 });
 
 //点击class为p4的元素触发下一张照片的函数
-$(document).on("click", ".p4", function () {
+$(document).on("click", ".p3", function () {
   nextimg();
   return false;
 });

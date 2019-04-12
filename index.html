@@ -163,10 +163,10 @@
         <div id="center-right-top">
           <div class="list">
             <ul>
-              <li class="p4"><a href="#"><img src="./static/image/Group 3.jpg" alt="" /></a></li>
-              <li class="p3"><a href="#"><img src="./static/image/Group 36.png" alt="" /></a></li>
-              <li class="p2"><a href="#"><img src="./static/image/Group 3.jpg" alt="" /></a></li>
-              <li class="p1"><a href="#"><img src="./static/image/Group 36.png" alt="" /></a></li>
+              <li v-for="(item,index) in AdvertList" :class="'p' + index" ><a href="#"><img :src="item.imagePath" alt="" /></a></li>
+              <!-- <a class="p3"><a href="#"><img :src="AdvertList[0].imagePath" alt="" /></a></a>
+              <li class="p2"><a href="#"><img :src="AdvertList[0].imagePath" alt="" /></a></li>
+              <li class="p1"><a href="#"><img :src="AdvertList[0].imagePath" alt="" /></a></li> -->
             </ul>
           </div>
           <div class="buttons">
@@ -564,18 +564,27 @@
   <script src="./static/js/swiper.min.js"></script>
   <script src="./static/js/jquery-ui.min.js"></script>
   <script>
+    // $.ajax({
+    //   type: "post",
+    //   url: "http://192.168.123.4:8080/kio/public/getSubjectList",  
+    //   success: function (res) {
+    //     console.log(res)
+    //   }
+    // });
     $.ajax({
-      type: "post",
-      url: "http://192.168.123.4:8080/kio/public/getSubjectList",  
+      type: "get",
+      url: "http://192.168.123.100:8080/kio/public/getAdvertList",  
       success: function (res) {
         console.log(res)
       }
     });
+
     new Vue({
       el: "#app",
       data() {
         return {
-          subjectList: ""
+          subjectList: "",
+          AdvertList:""
         }
       },
       methods: {
@@ -586,14 +595,22 @@
 
           var _this = this
           
-          $.post('http://192.168.123.4:8080/kio/public/getSubjectList').then(function (res) {
+          // $.post('http://192.168.123.4:8080/kio/public/getSubjectList').then(function (res) {
 
-            _this.subjectList = res.subjectList.sort(compareByOrderNumber);
+          //   _this.subjectList = res.subjectList.sort(compareByOrderNumber);
                 
-            for (var i = 0; i < _this.subjectList.length; i++) {
-              _this.subjectList[i].gradeList = res.subjectList[i].gradeList.sort(compareByOrderNumber)
-            }
-          })
+          //   for (var i = 0; i < _this.subjectList.length; i++) {
+          //     _this.subjectList[i].gradeList = res.subjectList[i].gradeList.sort(compareByOrderNumber)
+          //   }
+          // })
+
+          $.get('http://192.168.123.100:8080/kio/public/getAdvertList').then(function (res) {
+
+                  _this.AdvertList = res.advertList
+                  console.log(_this.AdvertList)
+
+})
+
         }
       },
       created() {
