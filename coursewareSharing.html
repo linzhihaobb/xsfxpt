@@ -18,6 +18,7 @@
   <script src="./temScript/footer.js"></script>
 </head>
 <!-- 课件分享 -->
+
 <body>
 
   <div id="app">
@@ -32,31 +33,41 @@
         <div class="nszwz-center-left">
           <div class="divBottom">
             <span class="jiachu">类别：</span>
-            <span class="clickSpan chooseSpan">全部</span>
-            <span class="clickSpan" v-for="item in categoryList"><a href="#" v-text="item.name"></a></span>
+            <span class="clickSpan chooseSpan" @click="getDataSet" data-leibie="all">全部</span>
+            <span class="clickSpan" v-for="item in categoryList" v-text="item.name" :data-leibie="item.id"
+              @click="getDataSet"></span>
           </div>
           <div class="divBottom">
             <span class="jiachu">属性：</span>
-            <span v-for="item in propertyList">
-            <div class="clickRadio clickRadioBg"><span class="glyphicon-th-list glyphicon glyphicon-ok"></span></div>
+            <!-- <span v-for="item in propertyList"> -->
+            <div class="clickRadio" :data-free="free.id"><span class="glyphicon-th-list glyphicon glyphicon-ok"></span>
+            </div>
+            <span class="radioFont" v-text="free.name" @click="getDataZiYuan"></span>
+            <div class="clickRadio" :data-supreme="supreme.id"><span
+                class="glyphicon-th-list glyphicon glyphicon-ok"></span></div>
+            <span class="radioFont" v-text="supreme.name" @click="getDataZiYuan"></span>
+            <!-- <div class="clickRadio clickRadioBg" data-leibie="propertyList[2].id"><span class="glyphicon-th-list glyphicon glyphicon-ok" ></span></div>
             <span class="radioFont" v-text="item.name"></span>
-          </span>
+            <div class="clickRadio clickRadioBg" data-leibie="propertyList[3].id"><span class="glyphicon-th-list glyphicon glyphicon-ok" ></span></div>
+            <span class="radioFont" v-text="item.name"></span> -->
+            <!-- </span> -->
           </div>
           <div class="divBottom">
             <span class="jiachu">年份：</span>
-            <span class="clickSpan  chooseSpan"><a href="#">全部</a></span>
-            <span class="clickSpan">2019</span>
-            <span class="clickSpan">2018</span>
-            <span class="clickSpan">2017</span>
-            <span class="clickSpan">2016</span>
-            <span class="clickSpan">2015</span>
-            <span class="clickSpan">2014</span>
-            <span class="clickSpan">2013</span>
+            <span class="clickSpan  chooseSpan" @click="getDataSet" data-yaer="all">全部</span>
+            <span class="clickSpan" @click="getDataSet" data-yaer="2019">2019</span>
+            <span class="clickSpan" @click="getDataSet" data-yaer="2018">2018</span>
+            <span class="clickSpan" @click="getDataSet" data-yaer="2017">2017</span>
+            <span class="clickSpan" @click="getDataSet" data-yaer="2016">2016</span>
+            <span class="clickSpan" @click="getDataSet" data-yaer="2015">2015</span>
+            <span class="clickSpan" @click="getDataSet" data-yaer="2014">2014</span>
+            <span class="clickSpan" @click="getDataSet" data-yaer="2013">2013</span>
           </div>
           <div>
             <span class="jiachu">区域：</span>
-            <span class="clickSpan  chooseSpan">全部</span>
-            <span class="clickSpan" v-for="item in areaList"><a href="#" v-text="item.name"></a></span>
+            <span class="clickSpan  chooseSpan" @click="getDataSet" data-leibie="all">全部</span>
+            <span class="clickSpan" v-for="item in areaList" v-text="item.name" @click="getDataSet"
+              :data-area="item.id"></span>
           </div>
         </div>
         <div class="nszwz-center-right">
@@ -68,21 +79,26 @@
             <span class="nianjichoose">高中</span>
           </div>
           <div v-for="item in gradeList" v-if="item.id == gradeId">
-          <div class="jiaocaiBottom">
-            <span class="jiachu">教材版本：</span>
-           
-            <span class="clickSpan  chooseSpan" v-for="tagList in item.tagList"> <a href="#" v-text="tagList.name"></a></span>
-     
+            <div class="jiaocaiBottom">
+              <span class="jiachu">教材版本：</span>
+              <span class="clickSpan  chooseSpan" @click="getDataSet" data-edition="all">全部</span>
+              <span class="clickSpan " v-for="tagList in item.tagList" v-text="tagList.name" @click="getDataSet"
+                :data-edition="item.id"></span>
+
+            </div>
+            <div class="jiaocaiBottom">
+              <span class="jiachu">教材版别：</span>
+              <span class="clickSpan  chooseSpan" @click="getDataSet" data-revision="all">全部</span>
+              <span class="clickSpan" v-for="versionList in item.versionList" v-text="versionList.name"
+                @click="getDataSet" :data-revision="item.id"></span>
+            </div>
+            <div class="jiaocaiBottom">
+              <span class="jiachu">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;元：</span>
+              <span class="clickSpan  chooseSpan" @click="getDataSet" data-unit="all">全部</span>
+              <span class="clickSpan " v-for="unitList in item.unitList" v-text="unitList.name" @click="getDataSet"
+                :data-unit="item.id"></span>
+            </div>
           </div>
-          <div class="jiaocaiBottom">
-            <span class="jiachu">教材版别：</span>
-            <span class="clickSpan  chooseSpan" v-for="versionList in item.versionList"> <a href="#" v-text="versionList.name"></a></span>
-          </div>
-          <div class="jiaocaiBottom">
-            <span class="jiachu">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;元：</span>
-            <span class="clickSpan  chooseSpan" v-for="unitList in item.unitList"> <a href="#" v-text="unitList.name"></a></span>
-          </div>
-        </div>
           <div>
             <span class="jiachu" style="float:left;line-height: 5.556vh">结果搜索：</span>
             <form action="">
@@ -94,10 +110,10 @@
       </div>
       <div class="clr"></div>
       <div class="nszwz-bottom">
-        <div class="kejianBox">
+        <div class="kejianBox" v-for="item in tvWareInfoList.list">
           <div class="kejianImg"><img src="./static/image/Group 3.jpg" alt=""></div>
           <div class="kejianRight">
-            <div class="kejianTitle">安徽省安庆市五校联盟2016-2017学年高二地理上</div>
+            <div class="kejianTitle" v-text="item.wareName"></div>
             <div class="jejianIntroduce1">
               <span class="strongSpan">类别：</span>
               <span>高二</span>
@@ -118,7 +134,7 @@
                 <div><span class="strongSpan">查看人数：</span><span class="spanSpace">1988人</span></div>
               </div>
               <div class="jejianIntroduce">
-                <div> <span class="strongSpan"> 区域：</span><span class="spanSpace">安徽省</span></div>
+                <div> <span class="strongSpan"> 区域：</span><span class="spanSpace">{{areaMap[item.province]}}</span></div>
                 <div> <span class="strongSpan">下载人数：</span><span>560人</span></div>
               </div>
               <div class="jejianIntroduce">
@@ -289,29 +305,41 @@
   <script src="./static/js/swiper.min.js"></script>
   <script src="./static/js/jquery-ui.min.js"></script>
   <script>
+    var url = "http://192.168.123.159:8080"
     $.ajax({
-      type: "post",
+      type: "get",
       // url: "http://192.168.123.4:8080/kio/public/getSubjectList",
       // url:" http://192.168.123.4:8080/kio/public/getVersionList?gradeId=76cc18981d124af9847d14b955494107",
-      url:" http://192.168.123.4:8080/kio/public/getGradeList",
+      // url: " http://192.168.123.4:8080/kio/public/getGradeList",
       // url:" http://192.168.123.4:8080/kio/public/getCategoryList",
       // url:" http://192.168.123.4:8080/kio/public/getPropertyList",
       // url: " http://192.168.123.4:8080/kio/public/getAreaList",
+      // url: " http://192.168.123.159:8080/kio/public/tvWareInfoList",
 
       success: function (res) {
         console.log(res)
       }
     });
+
     new Vue({
       el: "#app",
       data() {
         return {
           gradeList: "",
           areaList: "",
-          subjectId:'',
-          gradeId:"",
-          categoryList:"",
-          propertyList:""
+          areaMap: [],
+          gradeMap: [],
+          categoryMap: [],
+          subjectId: '',
+          gradeId: "",
+          categoryList: "",
+          propertyList: "",
+          supreme: {},
+          free: {},
+          param: {},
+          param1: {},
+          param3: {},
+          tvWareInfoList:{}
         }
       },
       methods: {
@@ -319,34 +347,109 @@
           function compareByOrderNumber(a, b) {
             return a.orderNumber - b.orderNumber;
           }
+
           function GetQueryString(name) {
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
             var r = window.location.search.substr(1).match(reg); //search,查询？后面的参数，并匹配正则
             if (r != null) return unescape(r[2]);
             return null;
           }
-          
+
           var _this = this
           _this.subjectId = GetQueryString("subjectId")
-          _this.gradeId= GetQueryString("gradeId")
-          console.log(_this.subjectId)
-          $.post('http://192.168.123.4:8080/kio/public/getGradeList').then(
+          _this.gradeId = GetQueryString("gradeId")
+          // console.log(_this.subjectId)
+          $.post(url + '/kio/public/getGradeList').then(
             function (res) {
               _this.gradeList = res.gradeList.sort(compareByOrderNumber)
+              s = _this.areaList;
+              for (var p in s) {
+                // console.log(s[p]);
+                //_this.areaList.push(s[p]);
+                _this.gradeMap[s[p].id] = s[p].name;
+              }
+              // console.log(res)
             })
 
-          $.post('http://192.168.123.4:8080/kio/public/getAreaList').then(
+          $.post(url + '/kio/public/getAreaList').then(
             function (res) {
               _this.areaList = res.areaList.sort(compareByOrderNumber)
+              s = _this.areaList;
+              for (var p in s) {
+                // console.log(s[p]);
+                //_this.areaList.push(s[p]);
+                _this.areaMap[s[p].id] = s[p].name;
+              }
+              console.log(_this.areaMap)
+              console.log(res)
             })
-            $.post("http://192.168.123.4:8080/kio/public/getCategoryList").then(
+          $.post(url + "/kio/public/getCategoryList").then(
             function (res) {
               _this.categoryList = res.categoryList.sort(compareByOrderNumber)
+              s = _this.categoryList;
+              for (var p in s) {
+                // console.log(s[p]);
+                //_this.areaList.push(s[p]);
+                _this.categoryMap[s[p].id] = s[p].name;
+              }
             })
-            $.post("http://192.168.123.4:8080/kio/public/getPropertyList").then(
+          $.post(url + "/kio/public/getPropertyList").then(
             function (res) {
+
               _this.propertyList = res.propertyList.sort(compareByOrderNumber)
+              // console.log(_this.propertyList)
+              _this.free = _this.propertyList[0]
+              _this.supreme = _this.propertyList[1]
             })
+            // var paramqq 
+            $.get("http://192.168.123.159:8080/kio/public/tvWareInfoList",  function (res) {
+            console.log(res)
+            _this.tvWareInfoList=res.tvWareInfoList
+          })
+        },
+
+        getDataSet(e) {
+
+          var _this = this
+          _this.param = {}
+          _this.param3 = {}
+          var chooseSpan = document.getElementsByClassName("chooseSpan")
+
+          $(e.target).siblings(".clickSpan").removeClass("chooseSpan")
+          $(e.target).addClass("chooseSpan")
+
+          for (var i = 0; i < $('.chooseSpan').length; i++) {
+            Object.assign(_this.param, chooseSpan[i].dataset)
+          }
+
+          // console.log(_this.param)
+          Object.assign(this.param3, this.param, this.param1)
+          // console.log(_this.param3)
+          var paramqq = {
+            province: _this.param3.area
+          }
+
+
+          $.get("http://192.168.123.159:8080/kio/public/tvWareInfoList", paramqq, function (res) {
+            console.log(res)
+            _this.tvWareInfoList=res.tvWareInfoList
+          })
+
+        },
+
+        getDataZiYuan(e) {
+          var clickRadioBg = document.getElementsByClassName("clickRadioBg")
+          var _this = this
+          _this.param1 = {}
+          _this.param3 = {}
+          $(e.target).prev().toggleClass("clickRadioBg")
+          for (var i = 0; i < $('.clickRadioBg').length; i++) {
+            Object.assign(_this.param1, clickRadioBg[i].dataset)
+          }
+
+          // console.log(_this.param1)
+          Object.assign(this.param3, this.param, this.param1)
+          console.log(_this.param3)
         }
       },
       created() {

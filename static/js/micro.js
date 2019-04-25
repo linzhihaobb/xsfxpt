@@ -48,14 +48,14 @@ $(function () {
     $(this).css({"color":"#FFFFFF","background":"#3CBAB3"})
     $(this).children().css("background","#FFFFFF")
   })
-  $(".clickSpan").click(function(){
-    $(this).siblings(".clickSpan").removeClass("chooseSpan")
-    $(this).addClass("chooseSpan")
-  })
-  $(".clickRadio").click(function(){
-    $(this).siblings(".clickRadio").removeClass("clickRadioBg")
-    $(this).addClass("clickRadioBg")
-  })
+  // $(".clickSpan").click(function(){
+  //   $(this).siblings(".clickSpan").removeClass("chooseSpan")
+  //   $(this).addClass("chooseSpan")
+  // })
+  // $(".clickRadio").click(function(){
+  //   $(this).siblings(".clickRadio").removeClass("clickRadioBg")
+  //   $(this).addClass("clickRadioBg")
+  // })
 
   $(".nianjichoose").click(function(){
     $(this).siblings(".nianjichoose").removeClass("nianjiActive")

@@ -118,6 +118,7 @@ border: 1px solid #979797
   background: #3DBDB6
 }
 .radioFont{
+  cursor: pointer;
   font-size:0.938vw;
   line-height: 1.198vw;
   margin-right: 1vw;
